@@ -35,8 +35,6 @@
             groupBox1 = new GroupBox();
             btnPrintMPlusC = new Button();
             btnExportMPlusC = new Button();
-            btnDeleteMPlusC = new Button();
-            btnEditMPlusC = new Button();
             btnAddMPlusC = new Button();
             comboBoxLoadCombinateList = new ComboBox();
             label4 = new Label();
@@ -44,6 +42,7 @@
             comboBoxLoadMajorList = new ComboBox();
             txtSearchMajorCom = new TextBox();
             btnSearchMajorCom = new Button();
+            btnDeleteMPlusC = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadListMajorCom).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -87,7 +86,6 @@
             groupBox1.Controls.Add(btnPrintMPlusC);
             groupBox1.Controls.Add(btnExportMPlusC);
             groupBox1.Controls.Add(btnDeleteMPlusC);
-            groupBox1.Controls.Add(btnEditMPlusC);
             groupBox1.Controls.Add(btnAddMPlusC);
             groupBox1.Controls.Add(comboBoxLoadCombinateList);
             groupBox1.Controls.Add(label4);
@@ -125,37 +123,12 @@
             btnExportMPlusC.Text = "Xuất file ";
             btnExportMPlusC.UseVisualStyleBackColor = false;
             // 
-            // btnDeleteMPlusC
-            // 
-            btnDeleteMPlusC.BackColor = Color.Honeydew;
-            btnDeleteMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            btnDeleteMPlusC.ForeColor = Color.Teal;
-            btnDeleteMPlusC.Location = new Point(1010, 31);
-            btnDeleteMPlusC.Name = "btnDeleteMPlusC";
-            btnDeleteMPlusC.Size = new Size(105, 41);
-            btnDeleteMPlusC.TabIndex = 6;
-            btnDeleteMPlusC.Text = "Xóa ";
-            btnDeleteMPlusC.UseVisualStyleBackColor = false;
-            btnDeleteMPlusC.Click += btnDeleteMPlusC_Click;
-            // 
-            // btnEditMPlusC
-            // 
-            btnEditMPlusC.BackColor = Color.Honeydew;
-            btnEditMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            btnEditMPlusC.ForeColor = Color.Teal;
-            btnEditMPlusC.Location = new Point(1010, 78);
-            btnEditMPlusC.Name = "btnEditMPlusC";
-            btnEditMPlusC.Size = new Size(105, 41);
-            btnEditMPlusC.TabIndex = 5;
-            btnEditMPlusC.Text = "Sửa ";
-            btnEditMPlusC.UseVisualStyleBackColor = false;
-            // 
             // btnAddMPlusC
             // 
             btnAddMPlusC.BackColor = Color.Honeydew;
             btnAddMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btnAddMPlusC.ForeColor = Color.Teal;
-            btnAddMPlusC.Location = new Point(887, 31);
+            btnAddMPlusC.Location = new Point(1010, 78);
             btnAddMPlusC.Name = "btnAddMPlusC";
             btnAddMPlusC.Size = new Size(105, 41);
             btnAddMPlusC.TabIndex = 4;
@@ -227,6 +200,19 @@
             btnSearchMajorCom.TextAlign = ContentAlignment.MiddleRight;
             btnSearchMajorCom.UseVisualStyleBackColor = false;
             // 
+            // btnDeleteMPlusC
+            // 
+            btnDeleteMPlusC.BackColor = Color.Honeydew;
+            btnDeleteMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
+            btnDeleteMPlusC.ForeColor = Color.Teal;
+            btnDeleteMPlusC.Location = new Point(1010, 31);
+            btnDeleteMPlusC.Name = "btnDeleteMPlusC";
+            btnDeleteMPlusC.Size = new Size(105, 41);
+            btnDeleteMPlusC.TabIndex = 6;
+            btnDeleteMPlusC.Text = "Xóa ";
+            btnDeleteMPlusC.UseVisualStyleBackColor = false;
+            btnDeleteMPlusC.Click += btnDeleteMPlusC_Click;
+            // 
             // fMajorPlusCombinate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -266,6 +252,5 @@
         private Button btnPrintMPlusC;
         private Button btnExportMPlusC;
         private Button btnDeleteMPlusC;
-        private Button btnEditMPlusC;
     }
 }

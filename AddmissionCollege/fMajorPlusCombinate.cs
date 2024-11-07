@@ -105,14 +105,13 @@ namespace AddmissionCollege
             }
 
             List<MajorCom> list = MajorComDAO.Instance.loadMajorCombinate();
-            HashSet<string> uniqueEntries = new HashSet<string>(); // Giúp theo dõi các bản ghi đã thêm
+            HashSet<string> uniqueEntries = new HashSet<string>(); 
 
             foreach (MajorCom majorCom in list)
             {
-                // Tạo một chuỗi duy nhất để kiểm tra lặp lại
                 string entry = $"{majorCom.TEN_NGANH}|{majorCom.TO_HOP}";
 
-                if (uniqueEntries.Add(entry)) // Nếu thêm thành công, nghĩa là chưa tồn tại
+                if (uniqueEntries.Add(entry)) 
                 {
                     dataGridViewLoadListMajorCom.Rows.Add(majorCom.TEN_NGANH, majorCom.TO_HOP);
                 }

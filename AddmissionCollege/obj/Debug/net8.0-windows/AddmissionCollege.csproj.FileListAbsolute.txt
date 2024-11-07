@@ -62,3 +62,5 @@ D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\A
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fFee.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fCombinate.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fMajorPlusCombinate.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.sourcelink.json
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fAddmission.resources

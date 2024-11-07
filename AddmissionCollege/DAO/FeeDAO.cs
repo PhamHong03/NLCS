@@ -23,8 +23,8 @@ namespace AddmissionCollege.DAO
         {
             List<Fee> list = new List<Fee>();
 
-            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT hp.ID AS ID , n.TEN_NGANH AS Nganh, nx.NAM AS nam, ct.TEN_CT as CT, hp.HOC_PHI_BINH_QUAN AS hp FROM HOC_PHI hp JOIN NGANH n ON hp.ID_N = n.ID JOIN NAM_XT nx ON hp.ID_NAM = nx.ID JOIN CHUONG_TRINH ct ON n.ID_CT = ct.ID ");
-
+            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT n.TEN_NGANH AS Nganh, nx.NAM AS nam, ct.TEN_CT as CT, hp.HOC_PHI_BINH_QUAN AS hp FROM HOC_PHI hp JOIN NGANH n ON hp.ID_N = n.ID JOIN NAM_XT nx ON hp.ID_NAM = nx.ID JOIN CHUONG_TRINH ct ON n.ID_CT = ct.ID");
+            //DataTable data = DataProvider.Instance.ExcuteQuery("SELECT HP.ID, HP.HOC_PHI_BINH_QUAN, NX.NAM, N.TEN_NGANH, CT.TEN_CT FROM HOC_PHI HP JOIN NAM_XT NX ON HP.ID_NAM = NX.ID JOIN NGANH N ON HP.ID_N = N.ID JOIN CHUONG_TRINH CT ON HP.ID_CT = CT.ID;\r\n");
             foreach (DataRow row in data.Rows)
             {
                 Fee fee = new Fee(row);
@@ -32,6 +32,31 @@ namespace AddmissionCollege.DAO
             }
 
             return list;
+        }
+
+        public bool InsertFee(string id_N, string id_CT, string nam, float hp)
+        {
+            string query = "insert into HOC_PHI VALUES ('" + id_N + "', '" + id_CT + "', '"+nam+"', '"+hp+"')";
+
+            int result = DataProvider.Instance.ExcuteNoneQuery(query);
+
+            return result > 0;
+        }
+        public bool DeleteFee(string id_N)
+        {
+            string query = "DELETE FROM HOC_PHI WHERE ID_N = '"+id_N+"'";
+
+            int result = DataProvider.Instance.ExcuteNoneQuery(query);
+
+            return result > 0;
+        }
+        public bool EditFee(string id_N, string id_CT, string nam, float hp)
+        {
+            string query = "UPDATE HOC_PHI SET ID_CT = '" + id_CT + "',ID_NAM = '" + nam + "',HOC_PHI_BINH_QUAN = '" + hp + "' where ID_N = '" + id_N + "'";
+
+            int result = DataProvider.Instance.ExcuteNoneQuery(query);
+
+            return result > 0;
         }
     }
 }

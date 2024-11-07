@@ -105,11 +105,11 @@ namespace AddmissionCollege
 
         private void btnAdmission_Click(object sender, EventArgs e)
         {
-            //fMajorPlusCombinate f = new fMajorPlusCombinate();
-            //Point pictureBoxLocation = panelPictureBox.PointToScreen(Point.Empty);
-            //f.StartPosition = FormStartPosition.Manual;
-            //f.Location = pictureBoxLocation;
-            //f.Show();
+            fAddmission f = new fAddmission();
+            Point pictureBoxLocation = panelPictureBox.PointToScreen(Point.Empty);
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = pictureBoxLocation;
+            f.Show();
         }
 
         private void btnTH_N_Click(object sender, EventArgs e)

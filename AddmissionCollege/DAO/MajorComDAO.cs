@@ -22,8 +22,8 @@ namespace AddmissionCollege.DAO
         {
             List<MajorCom> list = new List<MajorCom>();
 
-            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT N.TEN_NGANH AS NGANH, STRING_AGG(TH.TEN_TH, '; ') AS TO_HOP FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID GROUP BY N.TEN_NGANH");
-            //DataTable data = DataProvider.Instance.ExcuteQuery("SELECT N.TEN_NGANH AS NGANH, ID_TH FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID GROUP BY N.TEN_NGANH");
+            //DataTable data = DataProvider.Instance.ExcuteQuery("SELECT N.TEN_NGANH AS NGANH, STRING_AGG(TH.TEN_TH, '; ') AS TO_HOP FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID GROUP BY N.TEN_NGANH");
+            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT N.TEN_NGANH AS NGANH, STRING_AGG(TH.ID, ', ') AS TO_HOP FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID GROUP BY N.TEN_NGANH");
             foreach (DataRow dr in data.Rows) {
                 MajorCom majorCom = new MajorCom(dr);
                 list.Add(majorCom);

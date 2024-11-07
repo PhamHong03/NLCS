@@ -9,30 +9,31 @@ namespace AddmissionCollege.DTO
 {
     public class Fee
     {
-        private string iD;
         private string Nganh;
+        private string CT;
         private string nam;
-        private string hp;
+        private float hp;
 
-        public string ID { get => iD; set => iD = value; }
+
+        public float Hp { get => hp; set => hp = value; }
         public string Nganh1 { get => Nganh; set => Nganh = value; }
+        public string CT1 { get => CT; set => CT = value; }
         public string Nam { get => nam; set => nam = value; }
-        public string Hp { get => hp; set => hp = value; }
 
-        public Fee(string iD, string nganh, string nam, string hp)
-        {
-            this.ID = iD;
-            this.Nganh = nganh;
-            this.Nam = nam;
-            this.Hp = hp;
-        }
+        public Fee(string nganh, string ct, string nam, float hp) { 
+            
+            this.Nganh = nganh;  
+            this.CT = ct;    
+            this.Nam = nam;  
+            this.hp = hp;
+        }    
 
         public Fee(DataRow row)
         {
-            this.ID = row["ID"].ToString();
             this.Nganh1 = row["Nganh"].ToString();
-            this.Nam = row["Nam"].ToString();
-            this.Hp = row["Hp"].ToString();
+            this.CT1 = row["CT"].ToString();
+            this.Nam = row["nam"].ToString();
+            this.Hp = float.Parse(row["hp"].ToString());
         }
     }
 }

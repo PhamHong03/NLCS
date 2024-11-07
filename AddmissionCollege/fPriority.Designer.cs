@@ -270,6 +270,7 @@
             dataGridViewGradePriorityObject.Size = new Size(655, 394);
             dataGridViewGradePriorityObject.TabIndex = 3;
             dataGridViewGradePriorityObject.CellClick += dataGridViewGradePriorityObject_CellClick;
+//            dataGridViewGradePriorityObject.CellContentClick += dataGridViewGradePriorityObject_CellContentClick;
             // 
             // label4
             // 
@@ -317,7 +318,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(624, 819);
             panel2.TabIndex = 0;
-            panel2.Paint += panel2_Paint;
+           // panel2.Paint += panel2_Paint;
             // 
             // btnLoadData
             // 
@@ -474,6 +475,7 @@
             dataGridViewObjectLoad.Size = new Size(624, 397);
             dataGridViewObjectLoad.TabIndex = 2;
             dataGridViewObjectLoad.CellClick += dataGridViewObjectLoad_CellClick;
+            //dataGridViewObjectLoad.CellContentClick += dataGridViewObjectLoad_CellContentClick;
             // 
             // label3
             // 
