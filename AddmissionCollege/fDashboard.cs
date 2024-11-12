@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,16 +25,19 @@ namespace AddmissionCollege
         {
 
         }
+
+
         private void LoadUserInfo()
         {
-            // Gán tên người dùng và vai trò vào các control Label trên form
-            label2.Text = LoggedInUser.UserName;  // Gán tên đăng nhập
-            label3.Text = LoggedInUser.Role;      // Gán vai trò
+            label2.Text = LoggedInUser.UserName;  
+            label3.Text = LoggedInUser.Role;    
+
         }
+
         public class LoggedInUser
         {
-            public static string UserName { get; set; } = "Cẩm Hồng";  // Tên đăng nhập
-            public static string Role { get; set; } = "Quản trị viên";           // Vai trò
+            public static string UserName { get; set; } = "Cẩm Hồng";  
+            public static string Role { get; set; } = "Quản trị viên";      
         }
         private void button11_Click(object sender, EventArgs e)
         {
@@ -119,6 +124,11 @@ namespace AddmissionCollege
             f.StartPosition = FormStartPosition.Manual;
             f.Location = pictureBoxLocation;
             f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,7 +52,6 @@
             panel2 = new Panel();
             dataGridViewLoadArea = new DataGridView();
             panel4 = new Panel();
-            btnLoadData = new Button();
             txtDescArea = new TextBox();
             txtSearchArea = new TextBox();
             btnSearchArea = new Button();
@@ -144,11 +143,11 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label11.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label11.ForeColor = Color.DarkRed;
             label11.Location = new Point(14, 113);
             label11.Name = "label11";
-            label11.Size = new Size(62, 25);
+            label11.Size = new Size(61, 23);
             label11.TabIndex = 44;
             label11.Text = "Năm: ";
             // 
@@ -159,20 +158,21 @@
             txtSearchGradeArea.Multiline = true;
             txtSearchGradeArea.Name = "txtSearchGradeArea";
             txtSearchGradeArea.PlaceholderText = "Nhập mã hoặc tên";
-            txtSearchGradeArea.Size = new Size(251, 41);
+            txtSearchGradeArea.Size = new Size(240, 41);
             txtSearchGradeArea.TabIndex = 43;
+            txtSearchGradeArea.TextChanged += txtSearchGradeArea_TextChanged;
             txtSearchGradeArea.KeyDown += txtSearchGradeArea_KeyDown;
             // 
             // btnSearchGradeArea
             // 
             btnSearchGradeArea.BackColor = Color.Azure;
-            btnSearchGradeArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnSearchGradeArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnSearchGradeArea.ForeColor = Color.Firebrick;
             btnSearchGradeArea.Image = (Image)resources.GetObject("btnSearchGradeArea.Image");
             btnSearchGradeArea.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchGradeArea.Location = new Point(507, 99);
             btnSearchGradeArea.Name = "btnSearchGradeArea";
-            btnSearchGradeArea.Size = new Size(114, 46);
+            btnSearchGradeArea.Size = new Size(121, 46);
             btnSearchGradeArea.TabIndex = 42;
             btnSearchGradeArea.Text = "Tìm kiếm ";
             btnSearchGradeArea.TextAlign = ContentAlignment.MiddleRight;
@@ -181,7 +181,7 @@
             // btnDeleteGradeArea
             // 
             btnDeleteGradeArea.BackColor = Color.Azure;
-            btnDeleteGradeArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteGradeArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnDeleteGradeArea.ForeColor = Color.Firebrick;
             btnDeleteGradeArea.Location = new Point(340, 341);
             btnDeleteGradeArea.Name = "btnDeleteGradeArea";
@@ -194,7 +194,7 @@
             // btnResetGradeArea
             // 
             btnResetGradeArea.BackColor = Color.Azure;
-            btnResetGradeArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetGradeArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnResetGradeArea.ForeColor = Color.Firebrick;
             btnResetGradeArea.Location = new Point(457, 341);
             btnResetGradeArea.Name = "btnResetGradeArea";
@@ -207,7 +207,7 @@
             // btnEditGradeArea
             // 
             btnEditGradeArea.BackColor = Color.Azure;
-            btnEditGradeArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditGradeArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnEditGradeArea.ForeColor = Color.Firebrick;
             btnEditGradeArea.Location = new Point(214, 341);
             btnEditGradeArea.Name = "btnEditGradeArea";
@@ -220,7 +220,7 @@
             // btnAddGradeArea
             // 
             btnAddGradeArea.BackColor = Color.Azure;
-            btnAddGradeArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddGradeArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnAddGradeArea.ForeColor = Color.Firebrick;
             btnAddGradeArea.Location = new Point(92, 341);
             btnAddGradeArea.Name = "btnAddGradeArea";
@@ -257,33 +257,33 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label8.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label8.ForeColor = Color.DarkRed;
             label8.Location = new Point(79, 288);
             label8.Name = "label8";
-            label8.Size = new Size(92, 25);
+            label8.Size = new Size(112, 25);
             label8.TabIndex = 34;
             label8.Text = "Khu vực: ";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label9.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label9.ForeColor = Color.DarkRed;
             label9.Location = new Point(79, 231);
             label9.Name = "label9";
-            label9.Size = new Size(132, 25);
+            label9.Size = new Size(153, 25);
             label9.TabIndex = 33;
             label9.Text = "Điểm ưu tiên: ";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label10.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label10.ForeColor = Color.DarkRed;
             label10.Location = new Point(79, 175);
             label10.Name = "label10";
-            label10.Size = new Size(144, 25);
+            label10.Size = new Size(176, 25);
             label10.TabIndex = 32;
             label10.Text = "Mã KV ưu tiên: ";
             // 
@@ -301,11 +301,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             label3.ForeColor = Color.HotPink;
             label3.Location = new Point(171, 14);
             label3.Name = "label3";
-            label3.Size = new Size(350, 38);
+            label3.Size = new Size(391, 35);
             label3.TabIndex = 30;
             label3.Text = "ĐIỂM KHU VỰC ƯU TIÊN ";
             // 
@@ -333,7 +333,6 @@
             // panel4
             // 
             panel4.BackColor = Color.Azure;
-            panel4.Controls.Add(btnLoadData);
             panel4.Controls.Add(txtDescArea);
             panel4.Controls.Add(txtSearchArea);
             panel4.Controls.Add(btnSearchArea);
@@ -352,18 +351,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(647, 401);
             panel4.TabIndex = 0;
-            // 
-            // btnLoadData
-            // 
-            btnLoadData.BackColor = Color.Lavender;
-            btnLoadData.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnLoadData.ForeColor = Color.DimGray;
-            btnLoadData.Image = (Image)resources.GetObject("btnLoadData.Image");
-            btnLoadData.Location = new Point(576, 342);
-            btnLoadData.Name = "btnLoadData";
-            btnLoadData.Size = new Size(35, 37);
-            btnLoadData.TabIndex = 30;
-            btnLoadData.UseVisualStyleBackColor = false;
             // 
             // txtDescArea
             // 
@@ -386,13 +373,13 @@
             // btnSearchArea
             // 
             btnSearchArea.BackColor = Color.Ivory;
-            btnSearchArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnSearchArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnSearchArea.ForeColor = Color.SaddleBrown;
             btnSearchArea.Image = (Image)resources.GetObject("btnSearchArea.Image");
             btnSearchArea.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchArea.Location = new Point(513, 100);
             btnSearchArea.Name = "btnSearchArea";
-            btnSearchArea.Size = new Size(114, 46);
+            btnSearchArea.Size = new Size(130, 46);
             btnSearchArea.TabIndex = 27;
             btnSearchArea.Text = "Tìm kiếm ";
             btnSearchArea.TextAlign = ContentAlignment.MiddleRight;
@@ -401,7 +388,7 @@
             // btnDeleteArea
             // 
             btnDeleteArea.BackColor = Color.Ivory;
-            btnDeleteArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnDeleteArea.ForeColor = Color.SaddleBrown;
             btnDeleteArea.Location = new Point(293, 343);
             btnDeleteArea.Name = "btnDeleteArea";
@@ -414,7 +401,7 @@
             // btnResetArea
             // 
             btnResetArea.BackColor = Color.Ivory;
-            btnResetArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnResetArea.ForeColor = Color.SaddleBrown;
             btnResetArea.Location = new Point(420, 339);
             btnResetArea.Name = "btnResetArea";
@@ -427,9 +414,9 @@
             // btnEditArea
             // 
             btnEditArea.BackColor = Color.Ivory;
-            btnEditArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnEditArea.ForeColor = Color.SaddleBrown;
-            btnEditArea.Location = new Point(177, 343);
+            btnEditArea.Location = new Point(180, 342);
             btnEditArea.Name = "btnEditArea";
             btnEditArea.Size = new Size(78, 46);
             btnEditArea.TabIndex = 24;
@@ -440,9 +427,9 @@
             // btnAddArea
             // 
             btnAddArea.BackColor = Color.Ivory;
-            btnAddArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddArea.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             btnAddArea.ForeColor = Color.SaddleBrown;
-            btnAddArea.Location = new Point(59, 343);
+            btnAddArea.Location = new Point(62, 342);
             btnAddArea.Name = "btnAddArea";
             btnAddArea.Size = new Size(78, 46);
             btnAddArea.TabIndex = 23;
@@ -468,33 +455,33 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label7.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label7.ForeColor = Color.DarkRed;
             label7.Location = new Point(45, 276);
             label7.Name = "label7";
-            label7.Size = new Size(72, 25);
+            label7.Size = new Size(87, 25);
             label7.TabIndex = 20;
             label7.Text = "Mô tả: ";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label6.ForeColor = Color.DarkRed;
             label6.Location = new Point(42, 222);
             label6.Name = "label6";
-            label6.Size = new Size(125, 25);
+            label6.Size = new Size(150, 25);
             label6.TabIndex = 19;
             label6.Text = "Tên khu vực: ";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label5.ForeColor = Color.DarkRed;
             label5.Location = new Point(45, 162);
             label5.Name = "label5";
-            label5.Size = new Size(122, 25);
+            label5.Size = new Size(147, 25);
             label5.TabIndex = 18;
             label5.Text = "Mã khu vực: ";
             // 
@@ -512,11 +499,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             label1.ForeColor = Color.OrangeRed;
             label1.Location = new Point(180, 20);
             label1.Name = "label1";
-            label1.Size = new Size(270, 38);
+            label1.Size = new Size(301, 35);
             label1.TabIndex = 0;
             label1.Text = "KHU VỰC ƯU TIÊN ";
             // 
@@ -554,7 +541,6 @@
         private Panel panel4;
         private Label label1;
         private Label label2;
-        private Button btnLoadData;
         private TextBox txtDescArea;
         private TextBox txtSearchArea;
         private Button btnSearchArea;

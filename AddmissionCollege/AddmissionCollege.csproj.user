@@ -25,6 +25,18 @@
     <Compile Update="fMajorPlusCombinate.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="fPrintAdmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintCombinate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintMajor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="fPriority.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -35,6 +35,7 @@
             groupBox1 = new GroupBox();
             btnPrintMPlusC = new Button();
             btnExportMPlusC = new Button();
+            btnDeleteMPlusC = new Button();
             btnAddMPlusC = new Button();
             comboBoxLoadCombinateList = new ComboBox();
             label4 = new Label();
@@ -42,7 +43,6 @@
             comboBoxLoadMajorList = new ComboBox();
             txtSearchMajorCom = new TextBox();
             btnSearchMajorCom = new Button();
-            btnDeleteMPlusC = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadListMajorCom).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -91,19 +91,21 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(comboBoxLoadMajorList);
-            groupBox1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            groupBox1.ForeColor = Color.DarkBlue;
             groupBox1.Location = new Point(12, 173);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1283, 136);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Ngành - Tổ hợp ";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnPrintMPlusC
             // 
             btnPrintMPlusC.BackColor = Color.Honeydew;
             btnPrintMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            btnPrintMPlusC.ForeColor = Color.Teal;
+            btnPrintMPlusC.ForeColor = Color.DarkBlue;
             btnPrintMPlusC.Location = new Point(1135, 78);
             btnPrintMPlusC.Name = "btnPrintMPlusC";
             btnPrintMPlusC.Size = new Size(111, 41);
@@ -115,7 +117,7 @@
             // 
             btnExportMPlusC.BackColor = Color.Honeydew;
             btnExportMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            btnExportMPlusC.ForeColor = Color.Teal;
+            btnExportMPlusC.ForeColor = Color.DarkBlue;
             btnExportMPlusC.Location = new Point(1135, 31);
             btnExportMPlusC.Name = "btnExportMPlusC";
             btnExportMPlusC.Size = new Size(111, 41);
@@ -123,11 +125,24 @@
             btnExportMPlusC.Text = "Xuất file ";
             btnExportMPlusC.UseVisualStyleBackColor = false;
             // 
+            // btnDeleteMPlusC
+            // 
+            btnDeleteMPlusC.BackColor = Color.Honeydew;
+            btnDeleteMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
+            btnDeleteMPlusC.ForeColor = Color.DarkBlue;
+            btnDeleteMPlusC.Location = new Point(1010, 31);
+            btnDeleteMPlusC.Name = "btnDeleteMPlusC";
+            btnDeleteMPlusC.Size = new Size(105, 41);
+            btnDeleteMPlusC.TabIndex = 6;
+            btnDeleteMPlusC.Text = "Xóa ";
+            btnDeleteMPlusC.UseVisualStyleBackColor = false;
+            btnDeleteMPlusC.Click += btnDeleteMPlusC_Click;
+            // 
             // btnAddMPlusC
             // 
             btnAddMPlusC.BackColor = Color.Honeydew;
             btnAddMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnAddMPlusC.ForeColor = Color.Teal;
+            btnAddMPlusC.ForeColor = Color.DarkBlue;
             btnAddMPlusC.Location = new Point(1010, 78);
             btnAddMPlusC.Name = "btnAddMPlusC";
             btnAddMPlusC.Size = new Size(105, 41);
@@ -150,18 +165,20 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             label4.Location = new Point(507, 65);
             label4.Name = "label4";
-            label4.Size = new Size(77, 25);
+            label4.Size = new Size(81, 23);
             label4.TabIndex = 2;
             label4.Text = "Tổ hợp: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             label3.Location = new Point(22, 65);
             label3.Name = "label3";
-            label3.Size = new Size(75, 25);
+            label3.Size = new Size(76, 23);
             label3.TabIndex = 1;
             label3.Text = "Ngành: ";
             // 
@@ -170,7 +187,7 @@
             comboBoxLoadMajorList.DisplayMember = "TEN_NGANH";
             comboBoxLoadMajorList.Font = new Font("Times New Roman", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 163);
             comboBoxLoadMajorList.FormattingEnabled = true;
-            comboBoxLoadMajorList.Location = new Point(103, 62);
+            comboBoxLoadMajorList.Location = new Point(121, 62);
             comboBoxLoadMajorList.Name = "comboBoxLoadMajorList";
             comboBoxLoadMajorList.Size = new Size(338, 28);
             comboBoxLoadMajorList.TabIndex = 0;
@@ -184,12 +201,13 @@
             txtSearchMajorCom.PlaceholderText = "Nhập tìm kiếm ";
             txtSearchMajorCom.Size = new Size(257, 43);
             txtSearchMajorCom.TabIndex = 16;
+            txtSearchMajorCom.KeyDown += txtSearchMajorCom_KeyDown;
             // 
             // btnSearchMajorCom
             // 
             btnSearchMajorCom.BackColor = Color.Lavender;
             btnSearchMajorCom.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnSearchMajorCom.ForeColor = Color.Teal;
+            btnSearchMajorCom.ForeColor = Color.DarkBlue;
             btnSearchMajorCom.Image = (Image)resources.GetObject("btnSearchMajorCom.Image");
             btnSearchMajorCom.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchMajorCom.Location = new Point(1162, 107);
@@ -199,19 +217,7 @@
             btnSearchMajorCom.Text = "Tìm kiếm ";
             btnSearchMajorCom.TextAlign = ContentAlignment.MiddleRight;
             btnSearchMajorCom.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteMPlusC
-            // 
-            btnDeleteMPlusC.BackColor = Color.Honeydew;
-            btnDeleteMPlusC.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            btnDeleteMPlusC.ForeColor = Color.Teal;
-            btnDeleteMPlusC.Location = new Point(1010, 31);
-            btnDeleteMPlusC.Name = "btnDeleteMPlusC";
-            btnDeleteMPlusC.Size = new Size(105, 41);
-            btnDeleteMPlusC.TabIndex = 6;
-            btnDeleteMPlusC.Text = "Xóa ";
-            btnDeleteMPlusC.UseVisualStyleBackColor = false;
-            btnDeleteMPlusC.Click += btnDeleteMPlusC_Click;
+            btnSearchMajorCom.Click += btnSearchMajorCom_Click;
             // 
             // fMajorPlusCombinate
             // 

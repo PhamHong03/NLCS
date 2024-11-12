@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace AddmissionCollege
 {
@@ -19,7 +20,8 @@ namespace AddmissionCollege
             InitializeComponent();
             LoadListYear();
             LoadMajorList();
-            loadCurriculum();
+            listMethod();
+            //loadCurriculum();
             loadListAdmision();
         }
 
@@ -28,7 +30,7 @@ namespace AddmissionCollege
             dataGridViewLoadAddmission.Rows.Clear();
             if (dataGridViewLoadAddmission.Columns.Count == 0)
             {
-                dataGridViewLoadAddmission.Columns.Add("ID_N", "NGÀNH");
+                dataGridViewLoadAddmission.Columns.Add("ID_N", "MÃ NGÀNH");
                 dataGridViewLoadAddmission.Columns.Add("TEN_NGANH", "NGÀNH");
                 dataGridViewLoadAddmission.Columns.Add("PhuongThuc", "PHƯƠNG THỨC");
                 dataGridViewLoadAddmission.Columns.Add("CHI_TIEU", "CHỈ TIÊU");
@@ -47,11 +49,11 @@ namespace AddmissionCollege
 
             foreach (Addmision addmision in list)
             {
-                string entry = $"{addmision.Id_n}|{addmision.Id_pt}|{addmision.Nam}|{addmision.ChiTieu}|{addmision.Diem}";
+                string entry = $"{addmision.Id_n}|{addmision.Ten_Nganh}|{addmision.PhuongThuc1}|{addmision.Nam}|{addmision.ChiTieu}|{addmision.Diem}";
 
                 if (uniqueEntries.Add(entry))
                 {
-                    dataGridViewLoadAddmission.Rows.Add(addmision.Id_n, addmision.Id_pt, addmision.Nam, addmision.ChiTieu, addmision.Diem);
+                    dataGridViewLoadAddmission.Rows.Add(addmision.Id_n, addmision.Ten_Nganh, addmision.PhuongThuc1, addmision.ChiTieu, addmision.Diem, addmision.Nam);
                 }
             }
         }
@@ -130,6 +132,156 @@ namespace AddmissionCollege
                 MessageBox.Show("Danh sách rỗng á!");
             }
         }
+        void listMethod()
+        {
+            List<MethodXT> methodXT = MethodDAO.Instance.LoadMethodList();
 
+            if (methodXT != null && methodXT.Count > 0)
+            {
+                comboBoxLoadMethodAdm.DataSource = methodXT;
+                comboBoxLoadMethodAdm.DisplayMember = "TEN_PT1";
+                comboBoxLoadMethodAdm.ValueMember = "ID";
+            }
+            else
+            {
+                MessageBox.Show("Danh sách rỗng á!");
+            }
+        }
+
+        private void btnAddAddmision_Click(object sender, EventArgs e)
+        {
+            string id_n = comboBoxLoadMajorAdm.SelectedValue.ToString();
+            string id_pt = comboBoxLoadMethodAdm.SelectedValue.ToString();
+            string nam = comboBoxLoadYearAdm.SelectedValue.ToString();
+            int chiTieu = int.Parse(txtChiTieu.Text);
+            float diem = float.Parse(txtDiemTrungtuyen.Text);
+            if (AddmisionDAO.Instance.insertAdmission(id_n, id_pt, nam, chiTieu, diem))
+            {
+                MessageBox.Show("Thêm xét tuyển thành công!");
+                loadListAdmision();
+            }
+            else
+            {
+                MessageBox.Show("Thêm lỗi, vui lòng kiểm tra lại!");
+            }
+        }
+
+        private void dataGridViewLoadAddmission_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            comboBoxLoadMajorAdm.Text = dataGridViewLoadAddmission.Rows[e.RowIndex].Cells[1].Value.ToString();
+            comboBoxLoadMethodAdm.Text = dataGridViewLoadAddmission.Rows[e.RowIndex].Cells[2].Value.ToString();
+            comboBoxLoadYearAdm.Text = dataGridViewLoadAddmission.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtChiTieu.Text = dataGridViewLoadAddmission.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtDiemTrungtuyen.Text = dataGridViewLoadAddmission.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        private void btnDeleteAddmision_Click(object sender, EventArgs e)
+        {
+            string id_n = comboBoxLoadMajorAdm.SelectedValue.ToString();
+            string id_pt = comboBoxLoadMethodAdm.SelectedValue.ToString();
+
+            if (AddmisionDAO.Instance.deleteAdmission(id_n, id_pt))
+            {
+
+                MessageBox.Show("Xóa thành công");
+                loadListAdmision();
+            }
+            else
+            {
+                MessageBox.Show("Xóa lỗi, vui lòng kiểm tra lại");
+            }
+        }
+
+        private void btnEditAddmision_Click(object sender, EventArgs e)
+        {
+            string id_n = comboBoxLoadMajorAdm.SelectedValue.ToString();
+            string id_pt = comboBoxLoadMethodAdm.SelectedValue.ToString();
+            string nam = comboBoxLoadYearAdm.SelectedValue.ToString();
+            int chiTieu = int.Parse(txtChiTieu.Text);
+            float diem = float.Parse(txtDiemTrungtuyen.Text);
+            if (AddmisionDAO.Instance.updateAdmission(id_n, id_pt, nam, chiTieu, diem))
+            {
+                MessageBox.Show("Cập nhật xét tuyển thành công!");
+                loadListAdmision();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật lỗi, vui lòng kiểm tra lại!");
+            }
+        }
+
+        private void btnResetResetAdmision_Click(object sender, EventArgs e)
+        {
+            txtChiTieu.Clear();
+            txtDiemTrungtuyen.Clear();
+        }
+
+        private void btnSearchAddmision_Click(object sender, EventArgs e)
+        {
+            string tukhoa = txtSearchAddmision.Text;
+
+            string query = " SELECT XT.ID_N, N.TEN_NGANH, N.ID, PT.TEN_PT AS PhuongThuc, XT.ID_NAM AS NAM, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN FROM XET_TUYEN AS XT JOIN NGANH AS N ON XT.ID_N = N.ID JOIN PHUONG_THUC_XT AS PT ON XT.ID_PT = PT.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR N.ID LIKE '%" + tukhoa + "%' OR PT.TEN_PT LIKE '%" + tukhoa + "%';";
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            dataGridViewLoadAddmission.Rows.Clear();
+
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    dataGridViewLoadAddmission.Rows.Add(row["ID_N"], row["TEN_NGANH"], row["PhuongThuc"], row["CHI_TIEU"], row["DIEM_TRUNG_TUYEN"], row["NAM"]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả.");
+            }
+        }
+        private void txtSearchAddmision_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string tukhoa = txtSearchAddmision.Text;
+
+                string query = " SELECT XT.ID_N, N.TEN_NGANH, N.ID, PT.TEN_PT AS PhuongThuc, XT.ID_NAM AS NAM, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN FROM XET_TUYEN AS XT JOIN NGANH AS N ON XT.ID_N = N.ID JOIN PHUONG_THUC_XT AS PT ON XT.ID_PT = PT.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR N.ID LIKE '%" + tukhoa + "%' OR PT.TEN_PT LIKE '%" + tukhoa + "%';";
+
+                DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+                dataGridViewLoadAddmission.Rows.Clear();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow row in data.Rows)
+                    {
+                        dataGridViewLoadAddmission.Rows.Add(row["ID_N"], row["TEN_NGANH"], row["PhuongThuc"], row["CHI_TIEU"], row["DIEM_TRUNG_TUYEN"], row["NAM"]);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kết quả.");
+                }
+
+            }
+        }
+
+        private void txtSearchAddmision_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void comboBoxLoadYearAdm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id_nam = comboBoxLoadYearAdm.SelectedValue?.ToString();
+
+
+
+        }
+
+        private void btnPrintAddmision_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

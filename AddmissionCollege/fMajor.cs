@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AddmissionCollege
 {
@@ -45,14 +46,13 @@ namespace AddmissionCollege
             }
 
             List<Major> list = MajorDAO.Instance.loadMajorList();
-            HashSet<string> uniqueEntries = new HashSet<string>(); // Giúp theo dõi các bản ghi đã thêm
+            HashSet<string> uniqueEntries = new HashSet<string>();
 
             foreach (Major major in list)
             {
-                // Tạo một chuỗi duy nhất để kiểm tra lặp lại
                 string entry = $"{major.ID}|{major.TEN_NGANH1}|{major.THOI_GIAN_DAO_TAO1}|{major.Type}";
 
-                if (uniqueEntries.Add(entry)) // Nếu thêm thành công, nghĩa là chưa tồn tại
+                if (uniqueEntries.Add(entry))
                 {
                     dataGridViewLoadMajor.Rows.Add(major.ID, major.TEN_NGANH1, major.THOI_GIAN_DAO_TAO1, major.Type);
                 }
@@ -176,7 +176,6 @@ namespace AddmissionCollege
             if (e.KeyCode == Keys.Enter)
             {
                 string tukhoa = txtSearchMajor.Text;
-                //string query = "SELECT * FROM NGANH WHERE TEN_NGANH LIKE N'%"+tukhoa+ "%' ";
                 string query = "SELECT n.ID, n.TEN_NGANH, n.THOI_GIAN_DAO_TAO, ct.TEN_CT " +
                        "FROM NGANH n " +
                        "JOIN CHUONG_TRINH ct ON n.ID_CT = ct.ID " +
@@ -196,6 +195,15 @@ namespace AddmissionCollege
                     MessageBox.Show("Không tìm thấy kết quả.");
                 }
             }
+        }
+
+        private void btnPrintMajor_Click(object sender, EventArgs e)
+        {
+            fPrintMajor fPrintRoom = new fPrintMajor();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
         }
     }
 }

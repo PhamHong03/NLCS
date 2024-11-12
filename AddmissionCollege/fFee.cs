@@ -209,5 +209,70 @@ namespace AddmissionCollege
                 MessageBox.Show("Cập nhật lỗi, vui lòng kiểm tra lại!");
             }
         }
+
+
+
+        private void btnSearchFee_Click(object sender, EventArgs e)
+        {
+            string tukhoa = txtSearchFee.Text;
+
+            string query = "SELECT N.TEN_NGANH AS Nganh, CT.TEN_CT AS CT, HP.ID_NAM AS nam, HP.HOC_PHI_BINH_QUAN AS hp FROM HOC_PHI AS HP JOIN NGANH AS N ON HP.ID_N = N.ID JOIN CHUONG_TRINH AS CT ON HP.ID_CT = CT.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR CT.TEN_CT LIKE '%" + tukhoa + "%'";
+
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            dataGridViewLoadFee.Rows.Clear();
+
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    dataGridViewLoadFee.Rows.Add(row["Nganh"], row["CT"], row["nam"], row["hp"]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả.");
+            }
+        }
+
+        private void txtSearchFee_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchFee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string tukhoa = txtSearchFee.Text;
+
+                string query = "SELECT N.TEN_NGANH AS Nganh, CT.TEN_CT AS CT, HP.ID_NAM AS nam, HP.HOC_PHI_BINH_QUAN AS hp FROM HOC_PHI AS HP JOIN NGANH AS N ON HP.ID_N = N.ID JOIN CHUONG_TRINH AS CT ON HP.ID_CT = CT.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR CT.TEN_CT LIKE '%" + tukhoa + "%'";
+
+
+                DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+                dataGridViewLoadFee.Rows.Clear();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow row in data.Rows)
+                    {
+                        dataGridViewLoadFee.Rows.Add(row["Nganh"], row["CT"], row["nam"], row["hp"]);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kết quả.");
+                }
+
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

@@ -10,6 +10,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AddmissionCollege
 {
@@ -38,14 +39,13 @@ namespace AddmissionCollege
             }
 
             List<MethodXT> list = MethodDAO.Instance.LoadMethodList();
-            HashSet<string> uniqueEntries = new HashSet<string>(); // Giúp theo dõi các bản ghi đã thêm
+            HashSet<string> uniqueEntries = new HashSet<string>();
 
             foreach (MethodXT method in list)
             {
-                // Tạo một chuỗi duy nhất để kiểm tra lặp lại
                 string entry = $"{method.TEN_PT1}";
 
-                if (uniqueEntries.Add(entry)) // Nếu thêm thành công, nghĩa là chưa tồn tại
+                if (uniqueEntries.Add(entry))
                 {
                     dataGridViewLoadMethod.Rows.Add(method.ID, method.TEN_PT1, method.MO_TA1);
                 }
@@ -136,9 +136,13 @@ namespace AddmissionCollege
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnPrintMethod_Click(object sender, EventArgs e)
         {
-
+            fPrintMethod fPrintRoom = new fPrintMethod();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
         }
     }
 }

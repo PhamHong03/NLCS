@@ -105,13 +105,13 @@ namespace AddmissionCollege
             }
 
             List<MajorCom> list = MajorComDAO.Instance.loadMajorCombinate();
-            HashSet<string> uniqueEntries = new HashSet<string>(); 
+            HashSet<string> uniqueEntries = new HashSet<string>();
 
             foreach (MajorCom majorCom in list)
             {
                 string entry = $"{majorCom.TEN_NGANH}|{majorCom.TO_HOP}";
 
-                if (uniqueEntries.Add(entry)) 
+                if (uniqueEntries.Add(entry))
                 {
                     dataGridViewLoadListMajorCom.Rows.Add(majorCom.TEN_NGANH, majorCom.TO_HOP);
                 }
@@ -151,6 +151,62 @@ namespace AddmissionCollege
         private void dataGridViewLoadListMajorCom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             comboBoxLoadMajorList.Text = dataGridViewLoadListMajorCom.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void txtSearchMajorCom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string tukhoa = txtSearchMajorCom.Text;
+
+                string query = "SELECT N.TEN_NGANH AS NGANH, STRING_AGG(TH.ID, ', ') AS TO_HOP FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR TH.ID LIKE '%" + tukhoa + "%' GROUP BY N.TEN_NGANH";
+
+
+                DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+                dataGridViewLoadListMajorCom.Rows.Clear();
+
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow row in data.Rows)
+                    {
+                        dataGridViewLoadListMajorCom.Rows.Add(row["NGANH"], row["TO_HOP"]);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kết quả.");
+                }
+            }
+        }
+
+        private void btnSearchMajorCom_Click(object sender, EventArgs e)
+        {
+            string tukhoa = txtSearchMajorCom.Text;
+
+            string query = "SELECT N.TEN_NGANH AS NGANH, STRING_AGG(TH.ID, ', ') AS TO_HOP FROM NGANH_TO_HOP NTH JOIN NGANH N ON NTH.ID_N = N.ID JOIN TO_HOP_XT TH ON NTH.ID_TH = TH.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR TH.ID LIKE '%" + tukhoa + "%' GROUP BY N.TEN_NGANH";
+
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            dataGridViewLoadListMajorCom.Rows.Clear();
+
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    dataGridViewLoadListMajorCom.Rows.Add(row["NGANH"], row["TO_HOP"]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả.");
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

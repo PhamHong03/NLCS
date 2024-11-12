@@ -40,8 +40,8 @@
             btnResetResetAdmision = new Button();
             btnDeleteAddmision = new Button();
             btnEditAddmision = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtDiemTrungtuyen = new TextBox();
+            txtChiTieu = new TextBox();
             label6 = new Label();
             label5 = new Label();
             comboBoxLoadMethodAdm = new ComboBox();
@@ -63,6 +63,8 @@
             txtSearchAddmision.PlaceholderText = "Nhập tìm kiếm ";
             txtSearchAddmision.Size = new Size(257, 43);
             txtSearchAddmision.TabIndex = 18;
+            txtSearchAddmision.TextChanged += txtSearchAddmision_TextChanged;
+            txtSearchAddmision.KeyDown += txtSearchAddmision_KeyDown;
             // 
             // btnSearchAddmision
             // 
@@ -78,6 +80,7 @@
             btnSearchAddmision.Text = "Tìm kiếm ";
             btnSearchAddmision.TextAlign = ContentAlignment.MiddleRight;
             btnSearchAddmision.UseVisualStyleBackColor = false;
+            btnSearchAddmision.Click += btnSearchAddmision_Click;
             // 
             // label1
             // 
@@ -109,8 +112,8 @@
             groupBoxAddmison.Controls.Add(btnResetResetAdmision);
             groupBoxAddmison.Controls.Add(btnDeleteAddmision);
             groupBoxAddmison.Controls.Add(btnEditAddmision);
-            groupBoxAddmison.Controls.Add(textBox2);
-            groupBoxAddmison.Controls.Add(textBox1);
+            groupBoxAddmison.Controls.Add(txtDiemTrungtuyen);
+            groupBoxAddmison.Controls.Add(txtChiTieu);
             groupBoxAddmison.Controls.Add(label6);
             groupBoxAddmison.Controls.Add(label5);
             groupBoxAddmison.Controls.Add(comboBoxLoadMethodAdm);
@@ -125,7 +128,6 @@
             groupBoxAddmison.TabIndex = 20;
             groupBoxAddmison.TabStop = false;
             groupBoxAddmison.Text = "Thông tin xét tuyển ";
-//            groupBoxAddmison.Enter += groupBoxAddmison_Enter;
             // 
             // btnExportAddmison
             // 
@@ -150,7 +152,7 @@
             btnPrintAddmision.TabIndex = 19;
             btnPrintAddmision.Text = "In file ";
             btnPrintAddmision.UseVisualStyleBackColor = false;
-            //btnPrintAddmision.Click += btnPrintAddmision_Click;
+            btnPrintAddmision.Click += btnPrintAddmision_Click;
             // 
             // btnAddAddmision
             // 
@@ -163,6 +165,7 @@
             btnAddAddmision.TabIndex = 18;
             btnAddAddmision.Text = "Thêm ";
             btnAddAddmision.UseVisualStyleBackColor = false;
+            btnAddAddmision.Click += btnAddAddmision_Click;
             // 
             // btnResetResetAdmision
             // 
@@ -175,6 +178,7 @@
             btnResetResetAdmision.TabIndex = 17;
             btnResetResetAdmision.Text = "Đặt lại ";
             btnResetResetAdmision.UseVisualStyleBackColor = false;
+            btnResetResetAdmision.Click += btnResetResetAdmision_Click;
             // 
             // btnDeleteAddmision
             // 
@@ -187,6 +191,7 @@
             btnDeleteAddmision.TabIndex = 16;
             btnDeleteAddmision.Text = "Xóa ";
             btnDeleteAddmision.UseVisualStyleBackColor = false;
+            btnDeleteAddmision.Click += btnDeleteAddmision_Click;
             // 
             // btnEditAddmision
             // 
@@ -199,20 +204,21 @@
             btnEditAddmision.TabIndex = 15;
             btnEditAddmision.Text = "Sửa ";
             btnEditAddmision.UseVisualStyleBackColor = false;
+            btnEditAddmision.Click += btnEditAddmision_Click;
             // 
-            // textBox2
+            // txtDiemTrungtuyen
             // 
-            textBox2.Location = new Point(671, 92);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 30);
-            textBox2.TabIndex = 7;
+            txtDiemTrungtuyen.Location = new Point(671, 92);
+            txtDiemTrungtuyen.Name = "txtDiemTrungtuyen";
+            txtDiemTrungtuyen.Size = new Size(150, 30);
+            txtDiemTrungtuyen.TabIndex = 7;
             // 
-            // textBox1
+            // txtChiTieu
             // 
-            textBox1.Location = new Point(624, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 30);
-            textBox1.TabIndex = 6;
+            txtChiTieu.Location = new Point(624, 40);
+            txtChiTieu.Name = "txtChiTieu";
+            txtChiTieu.Size = new Size(197, 30);
+            txtChiTieu.TabIndex = 6;
             // 
             // label6
             // 
@@ -224,7 +230,6 @@
             label6.TabIndex = 5;
             label6.Text = "Điểm trúng tuyển: ";
             label6.TextAlign = ContentAlignment.MiddleCenter;
-            //label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -238,7 +243,7 @@
             // 
             // comboBoxLoadMethodAdm
             // 
-            comboBoxLoadMethodAdm.DisplayMember = "TEN_CT";
+            comboBoxLoadMethodAdm.DisplayMember = "TEN_PT";
             comboBoxLoadMethodAdm.Font = new Font("Times New Roman", 12F);
             comboBoxLoadMethodAdm.FormattingEnabled = true;
             comboBoxLoadMethodAdm.Location = new Point(179, 93);
@@ -280,14 +285,15 @@
             // 
             // dataGridViewLoadAddmission
             // 
+            dataGridViewLoadAddmission.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewLoadAddmission.BackgroundColor = Color.LavenderBlush;
             dataGridViewLoadAddmission.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewLoadAddmission.Location = new Point(8, 277);
+            dataGridViewLoadAddmission.Location = new Point(0, 277);
             dataGridViewLoadAddmission.Name = "dataGridViewLoadAddmission";
             dataGridViewLoadAddmission.RowHeadersWidth = 51;
-            dataGridViewLoadAddmission.Size = new Size(1292, 552);
+            dataGridViewLoadAddmission.Size = new Size(1300, 552);
             dataGridViewLoadAddmission.TabIndex = 21;
-            //dataGridViewLoadAddmission.CellContentClick += dataGridView1_CellContentClick;
+            dataGridViewLoadAddmission.CellClick += dataGridViewLoadAddmission_CellClick;
             // 
             // label7
             // 
@@ -299,7 +305,6 @@
             label7.Size = new Size(58, 22);
             label7.TabIndex = 21;
             label7.Text = "Năm: ";
-           // label7.Click += label7_Click;
             // 
             // comboBoxLoadYearAdm
             // 
@@ -311,6 +316,7 @@
             comboBoxLoadYearAdm.Size = new Size(174, 30);
             comboBoxLoadYearAdm.TabIndex = 21;
             comboBoxLoadYearAdm.ValueMember = "ID";
+            comboBoxLoadYearAdm.SelectedIndexChanged += comboBoxLoadYearAdm_SelectedIndexChanged;
             // 
             // fAddmission
             // 
@@ -350,8 +356,8 @@
         private Label label3;
         private Label label6;
         private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtDiemTrungtuyen;
+        private TextBox txtChiTieu;
         private Button btnExportAddmison;
         private Button btnPrintAddmision;
         private Button btnAddAddmision;

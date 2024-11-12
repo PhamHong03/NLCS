@@ -50,6 +50,7 @@
             panel4 = new Panel();
             label4 = new Label();
             panelPictureBox = new Panel();
+            btnManageAccount = new Button();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
@@ -94,28 +95,29 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.DarkBlue;
-            label3.Location = new Point(182, 49);
+            label3.Location = new Point(174, 60);
             label3.Name = "label3";
-            label3.Size = new Size(33, 20);
+            label3.Size = new Size(42, 22);
             label3.TabIndex = 3;
             label3.Text = "role";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label2.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label2.ForeColor = Color.DarkBlue;
-            label2.Location = new Point(182, 19);
+            label2.Location = new Point(129, 25);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(127, 25);
             label2.TabIndex = 2;
             label2.Text = "TÊN USER";
             // 
             // panel2
             // 
             panel2.BackColor = Color.AliceBlue;
+            panel2.Controls.Add(btnManageAccount);
             panel2.Controls.Add(button10);
             panel2.Controls.Add(btnAdmission);
             panel2.Controls.Add(btnArea);
@@ -134,7 +136,7 @@
             // button10
             // 
             button10.BackColor = Color.AliceBlue;
-            button10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button10.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             button10.ForeColor = Color.DarkBlue;
             button10.Image = (Image)resources.GetObject("button10.Image");
             button10.ImageAlign = ContentAlignment.MiddleLeft;
@@ -148,7 +150,7 @@
             // btnAdmission
             // 
             btnAdmission.BackColor = Color.AliceBlue;
-            btnAdmission.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAdmission.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnAdmission.ForeColor = Color.DarkBlue;
             btnAdmission.Image = (Image)resources.GetObject("btnAdmission.Image");
             btnAdmission.ImageAlign = ContentAlignment.MiddleLeft;
@@ -163,7 +165,7 @@
             // btnArea
             // 
             btnArea.BackColor = Color.AliceBlue;
-            btnArea.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnArea.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnArea.ForeColor = Color.DarkBlue;
             btnArea.Image = (Image)resources.GetObject("btnArea.Image");
             btnArea.ImageAlign = ContentAlignment.MiddleLeft;
@@ -178,7 +180,7 @@
             // btnPriority
             // 
             btnPriority.BackColor = Color.AliceBlue;
-            btnPriority.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnPriority.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnPriority.ForeColor = Color.DarkBlue;
             btnPriority.Image = (Image)resources.GetObject("btnPriority.Image");
             btnPriority.ImageAlign = ContentAlignment.MiddleLeft;
@@ -193,7 +195,7 @@
             // btnMethod
             // 
             btnMethod.BackColor = Color.AliceBlue;
-            btnMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnMethod.ForeColor = Color.DarkBlue;
             btnMethod.Image = (Image)resources.GetObject("btnMethod.Image");
             btnMethod.ImageAlign = ContentAlignment.MiddleLeft;
@@ -209,7 +211,7 @@
             // btnSet
             // 
             btnSet.BackColor = Color.AliceBlue;
-            btnSet.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnSet.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnSet.ForeColor = Color.DarkBlue;
             btnSet.Image = (Image)resources.GetObject("btnSet.Image");
             btnSet.ImageAlign = ContentAlignment.MiddleLeft;
@@ -224,7 +226,7 @@
             // btnFee
             // 
             btnFee.BackColor = Color.AliceBlue;
-            btnFee.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnFee.ForeColor = Color.DarkBlue;
             btnFee.Image = (Image)resources.GetObject("btnFee.Image");
             btnFee.ImageAlign = ContentAlignment.MiddleLeft;
@@ -239,7 +241,7 @@
             // btnMajor
             // 
             btnMajor.BackColor = Color.AliceBlue;
-            btnMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnMajor.ForeColor = Color.DarkBlue;
             btnMajor.Image = (Image)resources.GetObject("btnMajor.Image");
             btnMajor.ImageAlign = ContentAlignment.MiddleLeft;
@@ -254,7 +256,7 @@
             // btnTH_N
             // 
             btnTH_N.BackColor = Color.AliceBlue;
-            btnTH_N.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnTH_N.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnTH_N.ForeColor = Color.DarkBlue;
             btnTH_N.Image = (Image)resources.GetObject("btnTH_N.Image");
             btnTH_N.ImageAlign = ContentAlignment.MiddleLeft;
@@ -270,7 +272,7 @@
             // button1
             // 
             button1.BackColor = Color.AliceBlue;
-            button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             button1.ForeColor = Color.DarkBlue;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -280,6 +282,7 @@
             button1.TabIndex = 0;
             button1.Text = "Trang  Chủ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel5
             // 
@@ -294,11 +297,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.DarkBlue;
             label1.Location = new Point(265, 19);
             label1.Name = "label1";
-            label1.Size = new Size(617, 50);
+            label1.Size = new Size(636, 42);
             label1.TabIndex = 1;
             label1.Text = "HỆ THỐNG TUYỂN SINH ĐẠI HỌC ";
             // 
@@ -315,11 +318,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label4.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold);
             label4.ForeColor = Color.DarkBlue;
             label4.Location = new Point(78, 25);
             label4.Name = "label4";
-            label4.Size = new Size(97, 42);
+            label4.Size = new Size(72, 32);
             label4.TabIndex = 0;
             label4.Text = "CTU";
             // 
@@ -330,6 +333,20 @@
             panelPictureBox.Name = "panelPictureBox";
             panelPictureBox.Size = new Size(1307, 841);
             panelPictureBox.TabIndex = 5;
+            // 
+            // btnManageAccount
+            // 
+            btnManageAccount.BackColor = Color.AliceBlue;
+            btnManageAccount.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            btnManageAccount.ForeColor = Color.DarkBlue;
+            btnManageAccount.Image = (Image)resources.GetObject("btnManageAccount.Image");
+            btnManageAccount.ImageAlign = ContentAlignment.MiddleLeft;
+            btnManageAccount.Location = new Point(3, 766);
+            btnManageAccount.Name = "btnManageAccount";
+            btnManageAccount.Size = new Size(307, 59);
+            btnManageAccount.TabIndex = 10;
+            btnManageAccount.Text = "Quản lý tài khoản ";
+            btnManageAccount.UseVisualStyleBackColor = false;
             // 
             // fDashboard
             // 
@@ -377,5 +394,6 @@
         private Button button10;
         private Label label4;
         private Button button11;
+        private Button btnManageAccount;
     }
 }

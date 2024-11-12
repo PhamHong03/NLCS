@@ -71,10 +71,9 @@ namespace AddmissionCollege
 
             foreach (ObjectPriority objectPriority in list)
             {
-                // Tạo một chuỗi duy nhất để kiểm tra lặp lại
                 string entry = $"{objectPriority.Ten_DT1}|{objectPriority.CHINH_SACH1}";
 
-                if (uniqueEntries.Add(entry)) // Nếu thêm thành công, nghĩa là chưa tồn tại
+                if (uniqueEntries.Add(entry)) 
                 {
                     dataGridViewObjectLoad.Rows.Add(objectPriority.Id, objectPriority.Ten_DT1, objectPriority.CHINH_SACH1);
                 }
@@ -103,13 +102,11 @@ namespace AddmissionCollege
 
             if (priorityList != null && priorityList.Count > 0)
             {
-                // Sử dụng HashSet để loại bỏ bản sao
                 HashSet<string> uniqueObjects = new HashSet<string>();
                 List<ObjectPriority> distinctList = new List<ObjectPriority>();
 
                 foreach (var obj in priorityList)
                 {
-                    // Chỉ thêm nếu không có trong HashSet
                     if (uniqueObjects.Add(obj.Ten_DT1))
                     {
                         distinctList.Add(obj);
@@ -147,13 +144,11 @@ namespace AddmissionCollege
 
             if (listYear != null && listYear.Count > 0)
             {
-                // Sử dụng HashSet để loại bỏ bản sao
                 HashSet<string> uniqueYears = new HashSet<string>();
                 List<Year> distinctYears = new List<Year>();
 
                 foreach (var year in listYear)
                 {
-                    // Chỉ thêm nếu không có trong HashSet
                     if (uniqueYears.Add(year.NAM1))
                     {
                         distinctYears.Add(year);
@@ -246,19 +241,14 @@ namespace AddmissionCollege
             {
                 string tukhoa = txtSearchObjectPriority.Text;
 
-                // Câu truy vấn SQL để tìm kiếm
                 string query = "SELECT * FROM DOI_TUONG WHERE TEN_DT LIKE N'%" + tukhoa + "%'";
 
-                // Thực thi truy vấn và lấy kết quả trả về dưới dạng DataTable
                 DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
-                // Xóa dữ liệu cũ trong DataGridView
                 dataGridViewObjectLoad.Rows.Clear();
 
-                // Kiểm tra nếu có dữ liệu trả về
                 if (data.Rows.Count > 0)
                 {
-                    // Thêm dữ liệu mới vào DataGridView
                     foreach (DataRow row in data.Rows)
                     {
                         dataGridViewObjectLoad.Rows.Add(row["Id"], row["TEN_DT"], row["CHINH_SACH"]);
@@ -276,8 +266,8 @@ namespace AddmissionCollege
         }
         void LoadGradeObject()
         {
-            dataGridViewGradePriorityObject.Rows.Clear(); // Xóa tất cả các hàng trước khi thêm mới
-                                                          // Kiểm tra và tạo các cột chỉ một lần
+            dataGridViewGradePriorityObject.Rows.Clear(); 
+                                                          
             if (dataGridViewGradePriorityObject.Columns.Count == 0)
             {
                 dataGridViewGradePriorityObject.Columns.Add("ID", "ID");
@@ -285,22 +275,18 @@ namespace AddmissionCollege
                 dataGridViewGradePriorityObject.Columns.Add("Name_object", "ĐỐI TƯỢNG");
                 dataGridViewGradePriorityObject.Columns.Add("Nam", "NĂM");
 
-                // Thiết lập các thuộc tính cho tiêu đề cột
                 dataGridViewGradePriorityObject.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
                 dataGridViewGradePriorityObject.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 dataGridViewGradePriorityObject.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
             }
 
-            // Lấy danh sách các GradeObject
             List<GradeObject> list = GradeObjectDAO.Instance.loadGradeObject();
 
-            // Thêm dữ liệu vào dataGridView
             foreach (GradeObject grade in list)
             {
                 dataGridViewGradePriorityObject.Rows.Add(grade.ID, grade.Diem, grade.Name_object, grade.Nam);
             }
 
-            // Ẩn cột ID sau khi thêm xong
             dataGridViewGradePriorityObject.Columns["ID"].Visible = false;
         }
 
@@ -375,19 +361,14 @@ namespace AddmissionCollege
             {
                 string tukhoa = txtSearchGradeObject.Text;
 
-                // Câu truy vấn SQL để tìm kiếm
                 string query = "SELECT * FROM DIEM_DOI_TUONG WHERE DIEM LIKE '%" + tukhoa + "%'";
 
-                // Thực thi truy vấn và lấy kết quả trả về dưới dạng DataTable
                 DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
-                // Xóa dữ liệu cũ trong DataGridView
                 dataGridViewGradePriorityObject.Rows.Clear();
 
-                // Kiểm tra nếu có dữ liệu trả về
                 if (data.Rows.Count > 0)
                 {
-                    // Thêm dữ liệu mới vào DataGridView
                     foreach (DataRow row in data.Rows)
                     {
                         dataGridViewGradePriorityObject.Rows.Add(row["Id"], row["DIEM"], row["ID_DT"], row["ID_NAM"]);

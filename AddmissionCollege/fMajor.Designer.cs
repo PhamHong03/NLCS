@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMajor));
             button1 = new Button();
             panel1 = new Panel();
+            dataGridViewLoadMajor = new DataGridView();
             panel3 = new Panel();
             txtTrainTimeMajor = new TextBox();
             label7 = new Label();
@@ -47,19 +48,18 @@
             txtSearchMajor = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            panel2 = new Panel();
-            dataGridViewLoadMajor = new DataGridView();
+            btnExportMajor = new Button();
+            btnPrintMajor = new Button();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMajor).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.LavenderBlush;
             button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
-            button1.ForeColor = Color.Teal;
+            button1.ForeColor = Color.DarkBlue;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(1123, 98);
@@ -73,6 +73,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(dataGridViewLoadMajor);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(txtSearchMajor);
             panel1.Controls.Add(label2);
@@ -80,12 +81,27 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(5, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1294, 319);
+            panel1.Size = new Size(1294, 817);
             panel1.TabIndex = 1;
+            // 
+            // dataGridViewLoadMajor
+            // 
+            dataGridViewLoadMajor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewLoadMajor.BackgroundColor = Color.LavenderBlush;
+            dataGridViewLoadMajor.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewLoadMajor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewLoadMajor.Location = new Point(9, 324);
+            dataGridViewLoadMajor.Name = "dataGridViewLoadMajor";
+            dataGridViewLoadMajor.RowHeadersWidth = 51;
+            dataGridViewLoadMajor.Size = new Size(1282, 485);
+            dataGridViewLoadMajor.TabIndex = 0;
+            dataGridViewLoadMajor.CellClick += dataGridViewLoadMajor_CellClick;
             // 
             // panel3
             // 
             panel3.BackColor = Color.AliceBlue;
+            panel3.Controls.Add(btnExportMajor);
+            panel3.Controls.Add(btnPrintMajor);
             panel3.Controls.Add(txtTrainTimeMajor);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(btnResetMajor);
@@ -105,7 +121,7 @@
             // 
             // txtTrainTimeMajor
             // 
-            txtTrainTimeMajor.Location = new Point(723, 81);
+            txtTrainTimeMajor.Location = new Point(654, 87);
             txtTrainTimeMajor.Multiline = true;
             txtTrainTimeMajor.Name = "txtTrainTimeMajor";
             txtTrainTimeMajor.PlaceholderText = "Nhập thời gian dào tạo ";
@@ -115,11 +131,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label7.ForeColor = Color.Teal;
-            label7.Location = new Point(503, 91);
+            label7.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            label7.ForeColor = Color.DarkBlue;
+            label7.Location = new Point(434, 97);
             label7.Name = "label7";
-            label7.Size = new Size(215, 31);
+            label7.Size = new Size(201, 25);
             label7.TabIndex = 16;
             label7.Text = "Thời gian đào tạo: ";
             // 
@@ -127,8 +143,8 @@
             // 
             btnResetMajor.BackColor = Color.LavenderBlush;
             btnResetMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnResetMajor.ForeColor = Color.Teal;
-            btnResetMajor.Location = new Point(1169, 19);
+            btnResetMajor.ForeColor = Color.DarkBlue;
+            btnResetMajor.Location = new Point(1045, 26);
             btnResetMajor.Name = "btnResetMajor";
             btnResetMajor.Size = new Size(108, 45);
             btnResetMajor.TabIndex = 15;
@@ -140,8 +156,8 @@
             // 
             btnAddMajor.BackColor = Color.LavenderBlush;
             btnAddMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnAddMajor.ForeColor = Color.Teal;
-            btnAddMajor.Location = new Point(1169, 77);
+            btnAddMajor.ForeColor = Color.DarkBlue;
+            btnAddMajor.Location = new Point(1045, 97);
             btnAddMajor.Name = "btnAddMajor";
             btnAddMajor.Size = new Size(108, 45);
             btnAddMajor.TabIndex = 14;
@@ -153,8 +169,8 @@
             // 
             btnDeleteMajor.BackColor = Color.LavenderBlush;
             btnDeleteMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnDeleteMajor.ForeColor = Color.Teal;
-            btnDeleteMajor.Location = new Point(1036, 18);
+            btnDeleteMajor.ForeColor = Color.DarkBlue;
+            btnDeleteMajor.Location = new Point(921, 26);
             btnDeleteMajor.Name = "btnDeleteMajor";
             btnDeleteMajor.Size = new Size(108, 46);
             btnDeleteMajor.TabIndex = 8;
@@ -167,7 +183,7 @@
             comboBoxCurriculum.DisplayMember = "Ten_CT";
             comboBoxCurriculum.FormattingEnabled = true;
             comboBoxCurriculum.Items.AddRange(new object[] { "Chương trình đại trà", "Chương trình tiên tiến", "Chương trình chất lượng cao" });
-            comboBoxCurriculum.Location = new Point(679, 26);
+            comboBoxCurriculum.Location = new Point(610, 32);
             comboBoxCurriculum.Name = "comboBoxCurriculum";
             comboBoxCurriculum.Size = new Size(290, 28);
             comboBoxCurriculum.TabIndex = 13;
@@ -177,8 +193,8 @@
             // 
             btnEditMajor.BackColor = Color.LavenderBlush;
             btnEditMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnEditMajor.ForeColor = Color.Teal;
-            btnEditMajor.Location = new Point(1036, 77);
+            btnEditMajor.ForeColor = Color.DarkBlue;
+            btnEditMajor.Location = new Point(921, 98);
             btnEditMajor.Name = "btnEditMajor";
             btnEditMajor.Size = new Size(108, 45);
             btnEditMajor.TabIndex = 7;
@@ -189,11 +205,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label5.ForeColor = Color.Teal;
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            label5.ForeColor = Color.DarkBlue;
             label5.Location = new Point(16, 91);
             label5.Name = "label5";
-            label5.Size = new Size(131, 31);
+            label5.Size = new Size(127, 25);
             label5.TabIndex = 9;
             label5.Text = "Tên ngành:";
             // 
@@ -203,17 +219,17 @@
             txtIdMajor.Multiline = true;
             txtIdMajor.Name = "txtIdMajor";
             txtIdMajor.PlaceholderText = "Nhập mã ngành ";
-            txtIdMajor.Size = new Size(297, 41);
+            txtIdMajor.Size = new Size(261, 41);
             txtIdMajor.TabIndex = 10;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label6.ForeColor = Color.Teal;
-            label6.Location = new Point(503, 26);
+            label6.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            label6.ForeColor = Color.DarkBlue;
+            label6.Location = new Point(434, 32);
             label6.Name = "label6";
-            label6.Size = new Size(170, 31);
+            label6.Size = new Size(164, 25);
             label6.TabIndex = 12;
             label6.Text = "Chương trình: ";
             // 
@@ -223,17 +239,17 @@
             txtNameMajor.Multiline = true;
             txtNameMajor.Name = "txtNameMajor";
             txtNameMajor.PlaceholderText = "Nhập tên ngành ";
-            txtNameMajor.Size = new Size(297, 48);
+            txtNameMajor.Size = new Size(261, 48);
             txtNameMajor.TabIndex = 11;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label4.ForeColor = Color.Teal;
+            label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            label4.ForeColor = Color.DarkBlue;
             label4.Location = new Point(16, 26);
             label4.Name = "label4";
-            label4.Size = new Size(134, 31);
+            label4.Size = new Size(130, 25);
             label4.TabIndex = 5;
             label4.Text = "Mã ngành: ";
             // 
@@ -268,26 +284,30 @@
             label1.TabIndex = 1;
             label1.Text = "CẬP NHẬT NGÀNH ";
             // 
-            // panel2
+            // btnExportMajor
             // 
-            panel2.Controls.Add(dataGridViewLoadMajor);
-            panel2.Location = new Point(5, 329);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1285, 485);
-            panel2.TabIndex = 2;
+            btnExportMajor.BackColor = Color.LavenderBlush;
+            btnExportMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnExportMajor.ForeColor = Color.DarkBlue;
+            btnExportMajor.Location = new Point(1169, 26);
+            btnExportMajor.Name = "btnExportMajor";
+            btnExportMajor.Size = new Size(108, 45);
+            btnExportMajor.TabIndex = 19;
+            btnExportMajor.Text = "Xuất";
+            btnExportMajor.UseVisualStyleBackColor = false;
             // 
-            // dataGridViewLoadMajor
+            // btnPrintMajor
             // 
-            dataGridViewLoadMajor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewLoadMajor.BackgroundColor = Color.LavenderBlush;
-            dataGridViewLoadMajor.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewLoadMajor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewLoadMajor.Location = new Point(3, 3);
-            dataGridViewLoadMajor.Name = "dataGridViewLoadMajor";
-            dataGridViewLoadMajor.RowHeadersWidth = 51;
-            dataGridViewLoadMajor.Size = new Size(1282, 471);
-            dataGridViewLoadMajor.TabIndex = 0;
-            dataGridViewLoadMajor.CellClick += dataGridViewLoadMajor_CellClick;
+            btnPrintMajor.BackColor = Color.LavenderBlush;
+            btnPrintMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnPrintMajor.ForeColor = Color.DarkBlue;
+            btnPrintMajor.Location = new Point(1169, 97);
+            btnPrintMajor.Name = "btnPrintMajor";
+            btnPrintMajor.Size = new Size(108, 45);
+            btnPrintMajor.TabIndex = 18;
+            btnPrintMajor.Text = "In file ";
+            btnPrintMajor.UseVisualStyleBackColor = false;
+            btnPrintMajor.Click += btnPrintMajor_Click;
             // 
             // fMajor
             // 
@@ -295,7 +315,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1301, 826);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fMajor";
@@ -303,10 +322,9 @@
             Load += fMajor_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMajor).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMajor).EndInit();
             ResumeLayout(false);
         }
 
@@ -314,7 +332,6 @@
 
         private Button button1;
         private Panel panel1;
-        private Panel panel2;
         private Label label1;
         private Label label2;
         private TextBox txtSearchMajor;
@@ -332,5 +349,7 @@
         private Button btnResetMajor;
         private TextBox txtTrainTimeMajor;
         private Label label7;
+        private Button btnExportMajor;
+        private Button btnPrintMajor;
     }
 }

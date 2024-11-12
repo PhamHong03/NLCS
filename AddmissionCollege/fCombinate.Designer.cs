@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCombinate));
-            dataGridViewLoadCombinate = new DataGridView();
             label2 = new Label();
             label1 = new Label();
             btnResetCombinate = new Button();
@@ -40,31 +39,17 @@
             txtIdCombinate = new TextBox();
             txtNameCombinate = new TextBox();
             label4 = new Label();
-            panel2 = new Panel();
             panel3 = new Panel();
             btnExportCombinate = new Button();
             btnPrintCombinate = new Button();
             label5 = new Label();
             btnSearchCombinate = new Button();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadCombinate).BeginInit();
-            panel2.SuspendLayout();
+            dataGridViewLoadCombinate = new DataGridView();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadCombinate).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridViewLoadCombinate
-            // 
-            dataGridViewLoadCombinate.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewLoadCombinate.BackgroundColor = Color.LavenderBlush;
-            dataGridViewLoadCombinate.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewLoadCombinate.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewLoadCombinate.Location = new Point(6, 3);
-            dataGridViewLoadCombinate.Name = "dataGridViewLoadCombinate";
-            dataGridViewLoadCombinate.RowHeadersWidth = 51;
-            dataGridViewLoadCombinate.Size = new Size(1285, 506);
-            dataGridViewLoadCombinate.TabIndex = 0;
-            dataGridViewLoadCombinate.CellClick += dataGridViewLoadCombinate_CellClick;
             // 
             // label2
             // 
@@ -91,7 +76,7 @@
             // 
             btnResetCombinate.BackColor = Color.LavenderBlush;
             btnResetCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnResetCombinate.ForeColor = Color.Teal;
+            btnResetCombinate.ForeColor = Color.DarkBlue;
             btnResetCombinate.Location = new Point(949, 26);
             btnResetCombinate.Name = "btnResetCombinate";
             btnResetCombinate.Size = new Size(133, 45);
@@ -104,7 +89,7 @@
             // 
             btnAddCombinate.BackColor = Color.LavenderBlush;
             btnAddCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnAddCombinate.ForeColor = Color.Teal;
+            btnAddCombinate.ForeColor = Color.DarkBlue;
             btnAddCombinate.Location = new Point(787, 98);
             btnAddCombinate.Name = "btnAddCombinate";
             btnAddCombinate.Size = new Size(125, 45);
@@ -117,7 +102,7 @@
             // 
             btnDeleteCombinate.BackColor = Color.LavenderBlush;
             btnDeleteCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnDeleteCombinate.ForeColor = Color.Teal;
+            btnDeleteCombinate.ForeColor = Color.DarkBlue;
             btnDeleteCombinate.Location = new Point(952, 93);
             btnDeleteCombinate.Name = "btnDeleteCombinate";
             btnDeleteCombinate.Size = new Size(130, 46);
@@ -140,7 +125,7 @@
             // 
             btnEditCombinate.BackColor = Color.LavenderBlush;
             btnEditCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnEditCombinate.ForeColor = Color.Teal;
+            btnEditCombinate.ForeColor = Color.DarkBlue;
             btnEditCombinate.Location = new Point(787, 26);
             btnEditCombinate.Name = "btnEditCombinate";
             btnEditCombinate.Size = new Size(125, 45);
@@ -171,20 +156,12 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label4.ForeColor = Color.Teal;
+            label4.ForeColor = Color.DarkBlue;
             label4.Location = new Point(16, 26);
             label4.Name = "label4";
             label4.Size = new Size(137, 31);
             label4.TabIndex = 5;
             label4.Text = "Mã tổ hợp: ";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(dataGridViewLoadCombinate);
-            panel2.Location = new Point(4, 320);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1284, 516);
-            panel2.TabIndex = 4;
             // 
             // panel3
             // 
@@ -208,7 +185,7 @@
             // 
             btnExportCombinate.BackColor = Color.LavenderBlush;
             btnExportCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnExportCombinate.ForeColor = Color.Teal;
+            btnExportCombinate.ForeColor = Color.DarkBlue;
             btnExportCombinate.Location = new Point(1105, 26);
             btnExportCombinate.Name = "btnExportCombinate";
             btnExportCombinate.Size = new Size(133, 45);
@@ -220,30 +197,32 @@
             // 
             btnPrintCombinate.BackColor = Color.LavenderBlush;
             btnPrintCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnPrintCombinate.ForeColor = Color.Teal;
+            btnPrintCombinate.ForeColor = Color.DarkBlue;
             btnPrintCombinate.Location = new Point(1105, 93);
             btnPrintCombinate.Name = "btnPrintCombinate";
             btnPrintCombinate.Size = new Size(133, 45);
             btnPrintCombinate.TabIndex = 16;
             btnPrintCombinate.Text = "In file ";
             btnPrintCombinate.UseVisualStyleBackColor = false;
+            btnPrintCombinate.Click += btnPrintCombinate_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label5.ForeColor = Color.Teal;
+            label5.ForeColor = Color.DarkBlue;
             label5.Location = new Point(13, 105);
             label5.Name = "label5";
             label5.Size = new Size(140, 31);
             label5.TabIndex = 9;
             label5.Text = "Tên tổ hợp: ";
+            label5.Click += label5_Click;
             // 
             // btnSearchCombinate
             // 
             btnSearchCombinate.BackColor = Color.LavenderBlush;
             btnSearchCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
-            btnSearchCombinate.ForeColor = Color.Teal;
+            btnSearchCombinate.ForeColor = Color.DarkBlue;
             btnSearchCombinate.Image = (Image)resources.GetObject("btnSearchCombinate.Image");
             btnSearchCombinate.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearchCombinate.Location = new Point(1112, 111);
@@ -253,10 +232,12 @@
             btnSearchCombinate.Text = "Tìm kiếm ";
             btnSearchCombinate.TextAlign = ContentAlignment.MiddleRight;
             btnSearchCombinate.UseVisualStyleBackColor = false;
+            btnSearchCombinate.Click += btnSearchCombinate_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(dataGridViewLoadCombinate);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(txtSearchCombinate);
             panel1.Controls.Add(label2);
@@ -264,8 +245,21 @@
             panel1.Controls.Add(btnSearchCombinate);
             panel1.Location = new Point(4, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1291, 317);
+            panel1.Size = new Size(1291, 838);
             panel1.TabIndex = 3;
+            // 
+            // dataGridViewLoadCombinate
+            // 
+            dataGridViewLoadCombinate.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewLoadCombinate.BackgroundColor = Color.LavenderBlush;
+            dataGridViewLoadCombinate.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewLoadCombinate.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewLoadCombinate.Location = new Point(6, 320);
+            dataGridViewLoadCombinate.Name = "dataGridViewLoadCombinate";
+            dataGridViewLoadCombinate.RowHeadersWidth = 51;
+            dataGridViewLoadCombinate.Size = new Size(1282, 515);
+            dataGridViewLoadCombinate.TabIndex = 0;
+            dataGridViewLoadCombinate.CellClick += dataGridViewLoadCombinate_CellClick;
             // 
             // fCombinate
             // 
@@ -273,24 +267,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1307, 841);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fCombinate";
             Text = "fCombinate";
             Load += fCombinate_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadCombinate).EndInit();
-            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadCombinate).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridViewLoadCombinate;
         private Label label2;
         private Label label1;
         private TextBox txtTrainTimeMajor;
@@ -305,12 +295,12 @@
         private Label label6;
         private TextBox txtNameCombinate;
         private Label label4;
-        private Panel panel2;
         private Panel panel3;
         private Label label5;
         private Panel panel1;
         private Button btnSearchCombinate;
         private Button btnExportCombinate;
         private Button btnPrintCombinate;
+        private DataGridView dataGridViewLoadCombinate;
     }
 }

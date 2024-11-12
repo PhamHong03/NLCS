@@ -39,14 +39,13 @@ namespace AddmissionCollege
             }
 
             List<Combinate> list = CombinateDAO.Instance.LoadListCombinate();
-            HashSet<string> uniqueEntries = new HashSet<string>(); // Giúp theo dõi các bản ghi đã thêm
+            HashSet<string> uniqueEntries = new HashSet<string>();
 
             foreach (Combinate combinate in list)
             {
-                // Tạo một chuỗi duy nhất để kiểm tra lặp lại
                 string entry = $"{combinate.ID}|{combinate.TEN_TH1}";
 
-                if (uniqueEntries.Add(entry)) // Nếu thêm thành công, nghĩa là chưa tồn tại
+                if (uniqueEntries.Add(entry))
                 {
                     dataGridViewLoadCombinate.Rows.Add(combinate.ID, combinate.TEN_TH1);
                 }
@@ -117,19 +116,14 @@ namespace AddmissionCollege
             {
                 string tukhoa = txtSearchCombinate.Text;
 
-                // Câu truy vấn SQL để tìm kiếm
                 string query = "SELECT * FROM TO_HOP_XT WHERE TEN_TH LIKE '%" + tukhoa + "%' OR ID LIKE '%" + tukhoa + "%'";
 
-                // Thực thi truy vấn và lấy kết quả trả về dưới dạng DataTable
                 DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
-                // Xóa dữ liệu cũ trong DataGridView
                 dataGridViewLoadCombinate.Rows.Clear();
 
-                // Kiểm tra nếu có dữ liệu trả về
                 if (data.Rows.Count > 0)
                 {
-                    // Thêm dữ liệu mới vào DataGridView
                     foreach (DataRow row in data.Rows)
                     {
                         dataGridViewLoadCombinate.Rows.Add(row["ID"], row["TEN_TH"]);
@@ -140,6 +134,43 @@ namespace AddmissionCollege
                     MessageBox.Show("Không tìm thấy kết quả.");
                 }
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchCombinate_Click(object sender, EventArgs e)
+        {
+            string tukhoa = txtSearchCombinate.Text;
+
+            string query = "SELECT * FROM TO_HOP_XT WHERE TEN_TH LIKE '%" + tukhoa + "%' OR ID LIKE '%" + tukhoa + "%'";
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            dataGridViewLoadCombinate.Rows.Clear();
+
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    dataGridViewLoadCombinate.Rows.Add(row["ID"], row["TEN_TH"]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả.");
+            }
+        }
+
+        private void btnPrintCombinate_Click(object sender, EventArgs e)
+        {
+            fPrintCombinate fPrintRoom = new fPrintCombinate();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
         }
     }
 }

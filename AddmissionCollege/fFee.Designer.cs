@@ -32,7 +32,7 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            textBox3 = new TextBox();
+            txtSearchFee = new TextBox();
             btnSearchFee = new Button();
             panel2 = new Panel();
             comboBoxCT = new ComboBox();
@@ -68,17 +68,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.Red;
             label1.Location = new Point(483, 23);
             label1.Name = "label1";
-            label1.Size = new Size(310, 41);
+            label1.Size = new Size(314, 35);
             label1.TabIndex = 2;
             label1.Text = "CẬP NHẬT HỌC PHÍ ";
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtSearchFee);
             panel1.Controls.Add(btnSearchFee);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
@@ -88,19 +88,21 @@
             panel1.Size = new Size(1292, 319);
             panel1.TabIndex = 4;
             // 
-            // textBox3
+            // txtSearchFee
             // 
-            textBox3.Location = new Point(881, 88);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Nhập tìm kiếm ";
-            textBox3.Size = new Size(257, 43);
-            textBox3.TabIndex = 15;
+            txtSearchFee.Location = new Point(881, 88);
+            txtSearchFee.Multiline = true;
+            txtSearchFee.Name = "txtSearchFee";
+            txtSearchFee.PlaceholderText = "Nhập tìm kiếm ";
+            txtSearchFee.Size = new Size(257, 43);
+            txtSearchFee.TabIndex = 15;
+            txtSearchFee.TextChanged += txtSearchFee_TextChanged;
+            txtSearchFee.KeyDown += txtSearchFee_KeyDown;
             // 
             // btnSearchFee
             // 
             btnSearchFee.BackColor = Color.Lavender;
-            btnSearchFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnSearchFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnSearchFee.ForeColor = Color.MidnightBlue;
             btnSearchFee.Image = (Image)resources.GetObject("btnSearchFee.Image");
             btnSearchFee.ImageAlign = ContentAlignment.MiddleLeft;
@@ -111,6 +113,7 @@
             btnSearchFee.Text = "Tìm kiếm ";
             btnSearchFee.TextAlign = ContentAlignment.MiddleRight;
             btnSearchFee.UseVisualStyleBackColor = false;
+            btnSearchFee.Click += btnSearchFee_Click;
             // 
             // panel2
             // 
@@ -138,9 +141,9 @@
             // 
             comboBoxCT.DisplayMember = "Ten_CT";
             comboBoxCT.FormattingEnabled = true;
-            comboBoxCT.Location = new Point(602, 108);
+            comboBoxCT.Location = new Point(612, 108);
             comboBoxCT.Name = "comboBoxCT";
-            comboBoxCT.Size = new Size(252, 28);
+            comboBoxCT.Size = new Size(242, 28);
             comboBoxCT.TabIndex = 16;
             comboBoxCT.ValueMember = "ID";
             comboBoxCT.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
@@ -148,18 +151,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label3.ForeColor = Color.MidnightBlue;
             label3.Location = new Point(442, 109);
             label3.Name = "label3";
-            label3.Size = new Size(149, 28);
+            label3.Size = new Size(164, 25);
             label3.TabIndex = 15;
             label3.Text = "Chương trình: ";
             // 
             // btnExportFee
             // 
             btnExportFee.BackColor = Color.Lavender;
-            btnExportFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnExportFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnExportFee.ForeColor = Color.MidnightBlue;
             btnExportFee.Location = new Point(1174, 102);
             btnExportFee.Name = "btnExportFee";
@@ -171,7 +174,7 @@
             // btnFeePrint
             // 
             btnFeePrint.BackColor = Color.Lavender;
-            btnFeePrint.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnFeePrint.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnFeePrint.ForeColor = Color.MidnightBlue;
             btnFeePrint.Location = new Point(1174, 34);
             btnFeePrint.Name = "btnFeePrint";
@@ -183,7 +186,7 @@
             // btnAddFee
             // 
             btnAddFee.BackColor = Color.Lavender;
-            btnAddFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnAddFee.ForeColor = Color.MidnightBlue;
             btnAddFee.Location = new Point(925, 107);
             btnAddFee.Name = "btnAddFee";
@@ -196,7 +199,7 @@
             // btnResetFee
             // 
             btnResetFee.BackColor = Color.Lavender;
-            btnResetFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnResetFee.ForeColor = Color.MidnightBlue;
             btnResetFee.Location = new Point(1053, 103);
             btnResetFee.Name = "btnResetFee";
@@ -209,7 +212,7 @@
             // btnDeleteFee
             // 
             btnDeleteFee.BackColor = Color.Lavender;
-            btnDeleteFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnDeleteFee.ForeColor = Color.MidnightBlue;
             btnDeleteFee.Location = new Point(1053, 35);
             btnDeleteFee.Name = "btnDeleteFee";
@@ -222,7 +225,7 @@
             // btnEditFee
             // 
             btnEditFee.BackColor = Color.Lavender;
-            btnEditFee.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditFee.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnEditFee.ForeColor = Color.MidnightBlue;
             btnEditFee.Location = new Point(925, 34);
             btnEditFee.Name = "btnEditFee";
@@ -258,33 +261,34 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label7.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label7.ForeColor = Color.MidnightBlue;
             label7.Location = new Point(35, 40);
             label7.Name = "label7";
-            label7.Size = new Size(96, 28);
+            label7.Size = new Size(105, 25);
             label7.TabIndex = 4;
             label7.Text = "Học phí: ";
+            label7.Click += label7_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(442, 35);
             label5.Name = "label5";
-            label5.Size = new Size(86, 28);
+            label5.Size = new Size(93, 25);
             label5.TabIndex = 2;
             label5.Text = "Ngành: ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label4.ForeColor = Color.MidnightBlue;
             label4.Location = new Point(35, 113);
             label4.Name = "label4";
-            label4.Size = new Size(144, 28);
+            label4.Size = new Size(154, 25);
             label4.TabIndex = 1;
             label4.Text = "Năm học phí: ";
             // 
@@ -340,7 +344,7 @@
         private Button btnAddFee;
         private Button btnResetFee;
         private Button btnDeleteFee;
-        private TextBox textBox3;
+        private TextBox txtSearchFee;
         private ComboBox comboBoxCT;
         private Label label3;
     }
