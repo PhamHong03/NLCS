@@ -28,7 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.AliceBlue;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(9, 88);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1283, 726);
+            dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.ForeColor = Color.DarkBlue;
+            label1.Location = new Point(370, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(551, 35);
+            label1.TabIndex = 2;
+            label1.Text = "DANH MỤC THÔNG TIN XÉT TUYỂN ";
             // 
             // fPrintAdmission
             // 
@@ -36,12 +62,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1301, 841);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fPrintAdmission";
             Text = "fPrintAdmission";
+            Load += fPrintAdmission_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
+        private Label label1;
     }
 }

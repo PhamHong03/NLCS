@@ -35,6 +35,7 @@
             label3 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            btnManageAccount = new Button();
             button10 = new Button();
             btnAdmission = new Button();
             btnArea = new Button();
@@ -50,7 +51,6 @@
             panel4 = new Panel();
             label4 = new Label();
             panelPictureBox = new Panel();
-            btnManageAccount = new Button();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
@@ -133,6 +133,20 @@
             panel2.Size = new Size(321, 828);
             panel2.TabIndex = 4;
             // 
+            // btnManageAccount
+            // 
+            btnManageAccount.BackColor = Color.AliceBlue;
+            btnManageAccount.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            btnManageAccount.ForeColor = Color.DarkBlue;
+            btnManageAccount.Image = (Image)resources.GetObject("btnManageAccount.Image");
+            btnManageAccount.ImageAlign = ContentAlignment.MiddleLeft;
+            btnManageAccount.Location = new Point(3, 766);
+            btnManageAccount.Name = "btnManageAccount";
+            btnManageAccount.Size = new Size(307, 59);
+            btnManageAccount.TabIndex = 10;
+            btnManageAccount.Text = "Quản lý tài khoản ";
+            btnManageAccount.UseVisualStyleBackColor = false;
+            // 
             // button10
             // 
             button10.BackColor = Color.AliceBlue;
@@ -146,6 +160,7 @@
             button10.TabIndex = 9;
             button10.Text = "Báo cáo thống kê ";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // btnAdmission
             // 
@@ -333,20 +348,6 @@
             panelPictureBox.Name = "panelPictureBox";
             panelPictureBox.Size = new Size(1307, 841);
             panelPictureBox.TabIndex = 5;
-            // 
-            // btnManageAccount
-            // 
-            btnManageAccount.BackColor = Color.AliceBlue;
-            btnManageAccount.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
-            btnManageAccount.ForeColor = Color.DarkBlue;
-            btnManageAccount.Image = (Image)resources.GetObject("btnManageAccount.Image");
-            btnManageAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnManageAccount.Location = new Point(3, 766);
-            btnManageAccount.Name = "btnManageAccount";
-            btnManageAccount.Size = new Size(307, 59);
-            btnManageAccount.TabIndex = 10;
-            btnManageAccount.Text = "Quản lý tài khoản ";
-            btnManageAccount.UseVisualStyleBackColor = false;
             // 
             // fDashboard
             // 

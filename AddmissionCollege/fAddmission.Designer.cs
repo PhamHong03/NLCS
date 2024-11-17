@@ -51,6 +51,7 @@
             dataGridViewLoadAddmission = new DataGridView();
             label7 = new Label();
             comboBoxLoadYearAdm = new ComboBox();
+            panel1 = new Panel();
             groupBoxAddmison.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadAddmission).BeginInit();
             SuspendLayout();
@@ -318,6 +319,13 @@
             comboBoxLoadYearAdm.ValueMember = "ID";
             comboBoxLoadYearAdm.SelectedIndexChanged += comboBoxLoadYearAdm_SelectedIndexChanged;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(0, 9);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1300, 820);
+            panel1.TabIndex = 22;
+            // 
             // fAddmission
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -332,6 +340,7 @@
             Controls.Add(btnSearchAddmision);
             Controls.Add(label1);
             Controls.Add(label2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fAddmission";
             Text = "fAddmission";
@@ -366,5 +375,6 @@
         private Button btnEditAddmision;
         private Label label7;
         private ComboBox comboBoxLoadYearAdm;
+        private Panel panel1;
     }
 }

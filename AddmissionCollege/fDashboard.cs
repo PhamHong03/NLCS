@@ -29,15 +29,15 @@ namespace AddmissionCollege
 
         private void LoadUserInfo()
         {
-            label2.Text = LoggedInUser.UserName;  
-            label3.Text = LoggedInUser.Role;    
+            label2.Text = LoggedInUser.UserName;
+            label3.Text = LoggedInUser.Role;
 
         }
 
         public class LoggedInUser
         {
-            public static string UserName { get; set; } = "Cẩm Hồng";  
-            public static string Role { get; set; } = "Quản trị viên";      
+            public static string UserName { get; set; } = "Cẩm Hồng";
+            public static string Role { get; set; } = "Quản trị viên";
         }
         private void button11_Click(object sender, EventArgs e)
         {
@@ -129,6 +129,15 @@ namespace AddmissionCollege
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            fReport f = new fReport();
+            Point pictureBoxLocation = panelPictureBox.PointToScreen(Point.Empty);
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = pictureBoxLocation;
+            f.Show();
         }
     }
 }

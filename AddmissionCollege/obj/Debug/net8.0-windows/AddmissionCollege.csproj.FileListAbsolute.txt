@@ -67,3 +67,5 @@ D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\A
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintMethod.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintMajor.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintCombinate.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintAdmission.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fReport.resources

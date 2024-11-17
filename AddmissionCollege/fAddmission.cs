@@ -281,7 +281,11 @@ namespace AddmissionCollege
 
         private void btnPrintAddmision_Click(object sender, EventArgs e)
         {
-
+            fPrintAdmission fPrintRoom = new fPrintAdmission();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
         }
     }
 }
