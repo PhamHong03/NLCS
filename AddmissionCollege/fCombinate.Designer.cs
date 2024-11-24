@@ -75,7 +75,7 @@
             // btnResetCombinate
             // 
             btnResetCombinate.BackColor = Color.LavenderBlush;
-            btnResetCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnResetCombinate.ForeColor = Color.DarkBlue;
             btnResetCombinate.Location = new Point(949, 26);
             btnResetCombinate.Name = "btnResetCombinate";
@@ -88,7 +88,7 @@
             // btnAddCombinate
             // 
             btnAddCombinate.BackColor = Color.LavenderBlush;
-            btnAddCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnAddCombinate.ForeColor = Color.DarkBlue;
             btnAddCombinate.Location = new Point(787, 98);
             btnAddCombinate.Name = "btnAddCombinate";
@@ -101,7 +101,7 @@
             // btnDeleteCombinate
             // 
             btnDeleteCombinate.BackColor = Color.LavenderBlush;
-            btnDeleteCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnDeleteCombinate.ForeColor = Color.DarkBlue;
             btnDeleteCombinate.Location = new Point(952, 93);
             btnDeleteCombinate.Name = "btnDeleteCombinate";
@@ -124,7 +124,7 @@
             // btnEditCombinate
             // 
             btnEditCombinate.BackColor = Color.LavenderBlush;
-            btnEditCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnEditCombinate.ForeColor = Color.DarkBlue;
             btnEditCombinate.Location = new Point(787, 26);
             btnEditCombinate.Name = "btnEditCombinate";
@@ -155,11 +155,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label4.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label4.ForeColor = Color.DarkBlue;
             label4.Location = new Point(16, 26);
             label4.Name = "label4";
-            label4.Size = new Size(137, 31);
+            label4.Size = new Size(132, 25);
             label4.TabIndex = 5;
             label4.Text = "Mã tổ hợp: ";
             // 
@@ -184,7 +184,7 @@
             // btnExportCombinate
             // 
             btnExportCombinate.BackColor = Color.LavenderBlush;
-            btnExportCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnExportCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnExportCombinate.ForeColor = Color.DarkBlue;
             btnExportCombinate.Location = new Point(1105, 26);
             btnExportCombinate.Name = "btnExportCombinate";
@@ -196,7 +196,7 @@
             // btnPrintCombinate
             // 
             btnPrintCombinate.BackColor = Color.LavenderBlush;
-            btnPrintCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnPrintCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnPrintCombinate.ForeColor = Color.DarkBlue;
             btnPrintCombinate.Location = new Point(1105, 93);
             btnPrintCombinate.Name = "btnPrintCombinate";
@@ -209,11 +209,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label5.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             label5.ForeColor = Color.DarkBlue;
             label5.Location = new Point(13, 105);
             label5.Name = "label5";
-            label5.Size = new Size(140, 31);
+            label5.Size = new Size(135, 25);
             label5.TabIndex = 9;
             label5.Text = "Tên tổ hợp: ";
             label5.Click += label5_Click;
@@ -221,7 +221,7 @@
             // btnSearchCombinate
             // 
             btnSearchCombinate.BackColor = Color.LavenderBlush;
-            btnSearchCombinate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            btnSearchCombinate.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnSearchCombinate.ForeColor = Color.DarkBlue;
             btnSearchCombinate.Image = (Image)resources.GetObject("btnSearchCombinate.Image");
             btnSearchCombinate.ImageAlign = ContentAlignment.MiddleLeft;

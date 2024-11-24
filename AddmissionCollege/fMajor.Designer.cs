@@ -33,6 +33,8 @@
             panel1 = new Panel();
             dataGridViewLoadMajor = new DataGridView();
             panel3 = new Panel();
+            btnExportMajor = new Button();
+            btnPrintMajor = new Button();
             txtTrainTimeMajor = new TextBox();
             label7 = new Label();
             btnResetMajor = new Button();
@@ -48,8 +50,6 @@
             txtSearchMajor = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btnExportMajor = new Button();
-            btnPrintMajor = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMajor).BeginInit();
             panel3.SuspendLayout();
@@ -58,7 +58,7 @@
             // button1
             // 
             button1.BackColor = Color.LavenderBlush;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             button1.ForeColor = Color.DarkBlue;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -119,6 +119,31 @@
             panel3.Size = new Size(1284, 170);
             panel3.TabIndex = 9;
             // 
+            // btnExportMajor
+            // 
+            btnExportMajor.BackColor = Color.LavenderBlush;
+            btnExportMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            btnExportMajor.ForeColor = Color.DarkBlue;
+            btnExportMajor.Location = new Point(1169, 26);
+            btnExportMajor.Name = "btnExportMajor";
+            btnExportMajor.Size = new Size(108, 45);
+            btnExportMajor.TabIndex = 19;
+            btnExportMajor.Text = "Xuất";
+            btnExportMajor.UseVisualStyleBackColor = false;
+            // 
+            // btnPrintMajor
+            // 
+            btnPrintMajor.BackColor = Color.LavenderBlush;
+            btnPrintMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
+            btnPrintMajor.ForeColor = Color.DarkBlue;
+            btnPrintMajor.Location = new Point(1169, 97);
+            btnPrintMajor.Name = "btnPrintMajor";
+            btnPrintMajor.Size = new Size(108, 45);
+            btnPrintMajor.TabIndex = 18;
+            btnPrintMajor.Text = "In file ";
+            btnPrintMajor.UseVisualStyleBackColor = false;
+            btnPrintMajor.Click += btnPrintMajor_Click;
+            // 
             // txtTrainTimeMajor
             // 
             txtTrainTimeMajor.Location = new Point(654, 87);
@@ -142,7 +167,7 @@
             // btnResetMajor
             // 
             btnResetMajor.BackColor = Color.LavenderBlush;
-            btnResetMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnResetMajor.ForeColor = Color.DarkBlue;
             btnResetMajor.Location = new Point(1045, 26);
             btnResetMajor.Name = "btnResetMajor";
@@ -155,7 +180,7 @@
             // btnAddMajor
             // 
             btnAddMajor.BackColor = Color.LavenderBlush;
-            btnAddMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnAddMajor.ForeColor = Color.DarkBlue;
             btnAddMajor.Location = new Point(1045, 97);
             btnAddMajor.Name = "btnAddMajor";
@@ -168,7 +193,7 @@
             // btnDeleteMajor
             // 
             btnDeleteMajor.BackColor = Color.LavenderBlush;
-            btnDeleteMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnDeleteMajor.ForeColor = Color.DarkBlue;
             btnDeleteMajor.Location = new Point(921, 26);
             btnDeleteMajor.Name = "btnDeleteMajor";
@@ -192,7 +217,7 @@
             // btnEditMajor
             // 
             btnEditMajor.BackColor = Color.LavenderBlush;
-            btnEditMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditMajor.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnEditMajor.ForeColor = Color.DarkBlue;
             btnEditMajor.Location = new Point(921, 98);
             btnEditMajor.Name = "btnEditMajor";
@@ -283,31 +308,6 @@
             label1.Size = new Size(299, 41);
             label1.TabIndex = 1;
             label1.Text = "CẬP NHẬT NGÀNH ";
-            // 
-            // btnExportMajor
-            // 
-            btnExportMajor.BackColor = Color.LavenderBlush;
-            btnExportMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnExportMajor.ForeColor = Color.DarkBlue;
-            btnExportMajor.Location = new Point(1169, 26);
-            btnExportMajor.Name = "btnExportMajor";
-            btnExportMajor.Size = new Size(108, 45);
-            btnExportMajor.TabIndex = 19;
-            btnExportMajor.Text = "Xuất";
-            btnExportMajor.UseVisualStyleBackColor = false;
-            // 
-            // btnPrintMajor
-            // 
-            btnPrintMajor.BackColor = Color.LavenderBlush;
-            btnPrintMajor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnPrintMajor.ForeColor = Color.DarkBlue;
-            btnPrintMajor.Location = new Point(1169, 97);
-            btnPrintMajor.Name = "btnPrintMajor";
-            btnPrintMajor.Size = new Size(108, 45);
-            btnPrintMajor.TabIndex = 18;
-            btnPrintMajor.Text = "In file ";
-            btnPrintMajor.UseVisualStyleBackColor = false;
-            btnPrintMajor.Click += btnPrintMajor_Click;
             // 
             // fMajor
             // 

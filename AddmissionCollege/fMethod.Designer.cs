@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMethod));
             panel1 = new Panel();
+            dataGridViewLoadMethod = new DataGridView();
             txtSearchMethod = new TextBox();
             panel3 = new Panel();
             btnPrintMethod = new Button();
@@ -47,10 +48,9 @@
             label2 = new Label();
             btnSearchMethod = new Button();
             label1 = new Label();
-            dataGridViewLoadMethod = new DataGridView();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMethod).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -66,9 +66,21 @@
             panel1.Size = new Size(1297, 826);
             panel1.TabIndex = 0;
             // 
+            // dataGridViewLoadMethod
+            // 
+            dataGridViewLoadMethod.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewLoadMethod.BackgroundColor = Color.LavenderBlush;
+            dataGridViewLoadMethod.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewLoadMethod.Location = new Point(5, 351);
+            dataGridViewLoadMethod.Name = "dataGridViewLoadMethod";
+            dataGridViewLoadMethod.RowHeadersWidth = 51;
+            dataGridViewLoadMethod.Size = new Size(1289, 472);
+            dataGridViewLoadMethod.TabIndex = 0;
+            dataGridViewLoadMethod.CellClick += dataGridViewLoadMethod_CellClick;
+            // 
             // txtSearchMethod
             // 
-            txtSearchMethod.Location = new Point(715, 114);
+            txtSearchMethod.Location = new Point(740, 114);
             txtSearchMethod.Multiline = true;
             txtSearchMethod.Name = "txtSearchMethod";
             txtSearchMethod.PlaceholderText = "Nhập mã phương thức ";
@@ -99,7 +111,7 @@
             // btnPrintMethod
             // 
             btnPrintMethod.BackColor = Color.LavenderBlush;
-            btnPrintMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnPrintMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnPrintMethod.ForeColor = Color.DarkBlue;
             btnPrintMethod.Location = new Point(1150, 26);
             btnPrintMethod.Name = "btnPrintMethod";
@@ -112,7 +124,7 @@
             // button1
             // 
             button1.BackColor = Color.LavenderBlush;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             button1.ForeColor = Color.DarkBlue;
             button1.Location = new Point(1150, 102);
             button1.Name = "button1";
@@ -144,7 +156,7 @@
             // btnResetMethod
             // 
             btnResetMethod.BackColor = Color.LavenderBlush;
-            btnResetMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnResetMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnResetMethod.ForeColor = Color.DarkBlue;
             btnResetMethod.Location = new Point(865, 102);
             btnResetMethod.Name = "btnResetMethod";
@@ -157,7 +169,7 @@
             // btnDeleteMethod
             // 
             btnDeleteMethod.BackColor = Color.LavenderBlush;
-            btnDeleteMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnDeleteMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnDeleteMethod.ForeColor = Color.DarkBlue;
             btnDeleteMethod.Location = new Point(1016, 26);
             btnDeleteMethod.Name = "btnDeleteMethod";
@@ -170,7 +182,7 @@
             // btnEditMethod
             // 
             btnEditMethod.BackColor = Color.LavenderBlush;
-            btnEditMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnEditMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnEditMethod.ForeColor = Color.DarkBlue;
             btnEditMethod.Location = new Point(1016, 102);
             btnEditMethod.Name = "btnEditMethod";
@@ -183,7 +195,7 @@
             // btnAddMethod
             // 
             btnAddMethod.BackColor = Color.LavenderBlush;
-            btnAddMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            btnAddMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnAddMethod.ForeColor = Color.DarkBlue;
             btnAddMethod.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddMethod.Location = new Point(731, 102);
@@ -248,13 +260,13 @@
             // btnSearchMethod
             // 
             btnSearchMethod.BackColor = Color.LavenderBlush;
-            btnSearchMethod.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            btnSearchMethod.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold);
             btnSearchMethod.ForeColor = Color.DarkBlue;
             btnSearchMethod.Image = (Image)resources.GetObject("btnSearchMethod.Image");
             btnSearchMethod.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearchMethod.Location = new Point(1114, 114);
+            btnSearchMethod.Location = new Point(1139, 114);
             btnSearchMethod.Name = "btnSearchMethod";
-            btnSearchMethod.Size = new Size(166, 54);
+            btnSearchMethod.Size = new Size(141, 54);
             btnSearchMethod.TabIndex = 7;
             btnSearchMethod.Text = "Tìm kiếm ";
             btnSearchMethod.TextAlign = ContentAlignment.MiddleRight;
@@ -271,18 +283,6 @@
             label1.TabIndex = 0;
             label1.Text = "CẬP NHẬT PHƯƠNG THỨC XÉT TUYỂN ";
             // 
-            // dataGridViewLoadMethod
-            // 
-            dataGridViewLoadMethod.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewLoadMethod.BackgroundColor = Color.LavenderBlush;
-            dataGridViewLoadMethod.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewLoadMethod.Location = new Point(5, 351);
-            dataGridViewLoadMethod.Name = "dataGridViewLoadMethod";
-            dataGridViewLoadMethod.RowHeadersWidth = 51;
-            dataGridViewLoadMethod.Size = new Size(1289, 472);
-            dataGridViewLoadMethod.TabIndex = 0;
-            dataGridViewLoadMethod.CellClick += dataGridViewLoadMethod_CellClick;
-            // 
             // fMethod
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -295,9 +295,9 @@
             Text = "Method";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMethod).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewLoadMethod).EndInit();
             ResumeLayout(false);
         }
 
