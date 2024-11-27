@@ -12,31 +12,35 @@ using System.Windows.Forms;
 
 namespace AddmissionCollege
 {
-    public partial class fPrintMethod : Form
+    public partial class fPrintFee : Form
     {
-        public fPrintMethod()
+        public fPrintFee()
         {
             InitializeComponent();
-            LoadListMethod();
+            LoadFeeList();
+
+
         }
 
-        private void fPrintMethod_Load(object sender, EventArgs e)
+        private void fPrintFee_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        void LoadListMethod()
+        void LoadFeeList()
         {
             dataGridView1.Rows.Clear();
             if (dataGridView1.Columns.Count == 0)
             {
-                //dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("TEN_PT", "TÊN PHƯƠNG THỨC");
-                dataGridView1.Columns.Add("MO_TA", "MÔ TẢ");
+                //dataGridViewLoadFee.Columns.Add("ID", "ID");
+                dataGridView1.Columns.Add("Nganh", "NGÀNH");
+                dataGridView1.Columns.Add("CT", "CHƯƠNG TRÌNH");
+                dataGridView1.Columns.Add("nam", "THỜI GIAN");
+                dataGridView1.Columns.Add("hp", "HỌC PHÍ");
+
+                dataGridView1.Columns["hp"].DefaultCellStyle.Format = "C0";
+                dataGridView1.Columns["hp"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+
 
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
                 dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -44,19 +48,19 @@ namespace AddmissionCollege
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
             }
 
-            List<MethodXT> list = MethodDAO.Instance.LoadMethodList();
+            List<Fee> list = FeeDAO.Instance.loadListFee();
             HashSet<string> uniqueEntries = new HashSet<string>();
 
-            foreach (MethodXT method in list)
+            foreach (Fee fee in list)
             {
-                string entry = $"{method.TEN_PT1}";
+                string entry = $"{fee.Nganh1}|{fee.CT1}|{fee.Nam}|{fee.Hp}";
 
                 if (uniqueEntries.Add(entry))
                 {
-                    dataGridView1.Rows.Add(method.TEN_PT1, method.MO_TA1);
+                    dataGridView1.Rows.Add(fee.Nganh1, fee.CT1, fee.Nam, fee.Hp);
                 }
             }
-            //dataGridView1.Columns["ID"].Visible = true;
         }
+
     }
 }

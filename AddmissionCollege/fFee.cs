@@ -21,6 +21,7 @@ namespace AddmissionCollege
             LoadListYear();
             LoadMajorList();
             loadCurriculum();
+
         }
 
         private void fFee_Load(object sender, EventArgs e)
@@ -272,6 +273,51 @@ namespace AddmissionCollege
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFeePrint_Click(object sender, EventArgs e)
+        {
+            fPrintFee fPrintRoom = new fPrintFee();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void comboBoxLoadYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string year = comboBoxLoadYear.Text;
+            dataGridViewLoadFee.Rows.Clear();
+            if (dataGridViewLoadFee.Columns.Count == 0)
+            {
+                //dataGridViewLoadFee.Columns.Add("ID", "ID");
+                dataGridViewLoadFee.Columns.Add("Nganh", "NGÀNH");
+                dataGridViewLoadFee.Columns.Add("CT", "CHƯƠNG TRÌNH");
+                dataGridViewLoadFee.Columns.Add("nam", "THỜI GIAN");
+                dataGridViewLoadFee.Columns.Add("hp", "HỌC PHÍ");
+
+                dataGridViewLoadFee.Columns["hp"].DefaultCellStyle.Format = "C0";
+                dataGridViewLoadFee.Columns["hp"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+
+
+                dataGridViewLoadFee.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
+                dataGridViewLoadFee.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                dataGridViewLoadFee.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
+            }
+
+            List<Fee> list = FeeDAO.Instance.loadListFeeFollowYear(year);
+            HashSet<string> uniqueEntries = new HashSet<string>();
+
+            foreach (Fee fee in list)
+            {
+                string entry = $"{fee.Nganh1}|{fee.CT1}|{fee.Nam}|{fee.Hp}";
+
+                if (uniqueEntries.Add(entry))
+                {
+                    dataGridViewLoadFee.Rows.Add(fee.Nganh1, fee.CT1, fee.Nam, fee.Hp);
+                }
+            }
         }
     }
 }

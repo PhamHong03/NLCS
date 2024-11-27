@@ -22,16 +22,6 @@ namespace AddmissionCollege
             conn = new SqlConnection("Data Source=LAPTOP-9S1O4HRM\\SQLEXPRESS;Initial Catalog=QuanLyTuyenSinhDaiHoc;Integrated Security=True;Trust Server Certificate=True");
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void fReport_Load(object sender, EventArgs e)
         {
             try
@@ -40,7 +30,6 @@ namespace AddmissionCollege
                 StatisticsDAO statsDAO = new StatisticsDAO();
                 Statistics stats = statsDAO.GetStatistics();
 
-                // Hiển thị kết quả lên các Label
                 labelCTDT.Text = stats.TongCTDT1.ToString();
                 labelMajor.Text = stats.TongNganh1.ToString();
                 labelMethod.Text = stats.TongPT1.ToString();
@@ -54,9 +43,73 @@ namespace AddmissionCollege
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void labelCTDT_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPrintMajor_Click(object sender, EventArgs e)
+        {
+            fPrintMajor fPrintRoom = new fPrintMajor();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void labelPrintCombinate_Click(object sender, EventArgs e)
+        {
+            fPrintCombinate fPrintRoom = new fPrintCombinate();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            fPrintMethod fPrintRoom = new fPrintMethod();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            fPrintArea fPrintRoom = new fPrintArea();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            fPrintObject fPrintRoom = new fPrintObject();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
+
+        private void btnFee_Click(object sender, EventArgs e)
+        {
+            ThongKeHocPhi fPrintRoom = new ThongKeHocPhi();
+            Point pictureBoxLocation = panel7.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
         }
     }
 }

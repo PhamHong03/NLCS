@@ -28,13 +28,25 @@
     <Compile Update="fPrintAdmission.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="fPrintArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="fPrintCombinate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintFee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="fPrintMajor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="fPrintMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fPrintTHN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="fPriority.cs">
@@ -44,6 +56,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="fReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ThongKeHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -182,6 +182,7 @@
             btnFeePrint.TabIndex = 13;
             btnFeePrint.Text = "In file ";
             btnFeePrint.UseVisualStyleBackColor = false;
+            btnFeePrint.Click += btnFeePrint_Click;
             // 
             // btnAddFee
             // 
@@ -250,6 +251,7 @@
             comboBoxLoadYear.Name = "comboBoxLoadYear";
             comboBoxLoadYear.Size = new Size(187, 28);
             comboBoxLoadYear.TabIndex = 7;
+            comboBoxLoadYear.SelectedIndexChanged += comboBoxLoadYear_SelectedIndexChanged;
             // 
             // txtFee
             // 

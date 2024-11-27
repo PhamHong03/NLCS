@@ -49,10 +49,10 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.AliceBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(1, 75);
+            dataGridView1.Location = new Point(12, 86);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1295, 760);
+            dataGridView1.Size = new Size(1270, 743);
             dataGridView1.TabIndex = 3;
             // 
             // fPrintCombinate
@@ -60,7 +60,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1301, 841);
+            ClientSize = new Size(1294, 841);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;

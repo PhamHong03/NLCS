@@ -69,3 +69,8 @@ D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\A
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintCombinate.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintAdmission.resources
 D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fReport.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintFee.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintArea.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintObject.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.ThongKeHocPhi.resources
+D:\HocPhanCT\NLCS\AddmissionCollege\AddmissionCollege\obj\Debug\net8.0-windows\AddmissionCollege.fPrintTHN.resources

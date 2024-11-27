@@ -12,31 +12,26 @@ using System.Windows.Forms;
 
 namespace AddmissionCollege
 {
-    public partial class fPrintMethod : Form
+    public partial class fPrintTHN : Form
     {
-        public fPrintMethod()
+        public fPrintTHN()
         {
             InitializeComponent();
-            LoadListMethod();
+            listMajorCombinate();
         }
 
-        private void fPrintMethod_Load(object sender, EventArgs e)
+        private void fPrintTHN_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        void LoadListMethod()
+        void listMajorCombinate()
         {
             dataGridView1.Rows.Clear();
             if (dataGridView1.Columns.Count == 0)
             {
-                //dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("TEN_PT", "TÊN PHƯƠNG THỨC");
-                dataGridView1.Columns.Add("MO_TA", "MÔ TẢ");
+                dataGridView1.Columns.Add("TEN_NGANH", "NGÀNH");
+                dataGridView1.Columns.Add("TO_HOP", "TỔ HỢP");
 
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
                 dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -44,19 +39,19 @@ namespace AddmissionCollege
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
             }
 
-            List<MethodXT> list = MethodDAO.Instance.LoadMethodList();
+            List<MajorCom> list = MajorComDAO.Instance.loadMajorCombinate();
             HashSet<string> uniqueEntries = new HashSet<string>();
 
-            foreach (MethodXT method in list)
+            foreach (MajorCom majorCom in list)
             {
-                string entry = $"{method.TEN_PT1}";
+                string entry = $"{majorCom.TEN_NGANH}|{majorCom.TO_HOP}";
 
                 if (uniqueEntries.Add(entry))
                 {
-                    dataGridView1.Rows.Add(method.TEN_PT1, method.MO_TA1);
+                    dataGridView1.Rows.Add(majorCom.TEN_NGANH, majorCom.TO_HOP);
                 }
             }
-            //dataGridView1.Columns["ID"].Visible = true;
+
         }
     }
 }

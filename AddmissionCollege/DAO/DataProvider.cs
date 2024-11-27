@@ -119,5 +119,37 @@ namespace AddmissionCollege.DAO
             }
             return dataTable;
         }
+
+        public object ExecuteScalar(string query, object[] parameter = null)
+        {
+            object data = 0;
+
+            using (SqlConnection sqlConnectio = new SqlConnection(connectionSTR))
+            {
+                sqlConnectio.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, sqlConnectio))
+                {
+                    if (parameter != null)
+                    {
+                        string[] listPara = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listPara)
+                        {
+                            if (item.Contains("@"))
+                            {
+                                cmd.Parameters.AddWithValue(item, parameter[i++]);
+                            }
+                        }
+                    }
+
+                    data = cmd.ExecuteScalar();
+                }
+
+                sqlConnectio.Close();
+            }
+            return data;
+        }
+
     }
 }

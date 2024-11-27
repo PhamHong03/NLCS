@@ -61,7 +61,7 @@
             txtSearchAddmision.Location = new Point(882, 78);
             txtSearchAddmision.Multiline = true;
             txtSearchAddmision.Name = "txtSearchAddmision";
-            txtSearchAddmision.PlaceholderText = "Nhập tìm kiếm ";
+            txtSearchAddmision.PlaceholderText = "Nhập mã ngành ";
             txtSearchAddmision.Size = new Size(257, 43);
             txtSearchAddmision.TabIndex = 18;
             txtSearchAddmision.TextChanged += txtSearchAddmision_TextChanged;

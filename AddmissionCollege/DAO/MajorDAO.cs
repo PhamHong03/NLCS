@@ -53,12 +53,34 @@ namespace AddmissionCollege.DAO
         }
         
         public bool InsertMajor(string id, string name, string timeTrain, int id_ct)
+
         {
-            string quey = "INSERT INTO NGANH VALUES('" + id + "', N'" + name + "', N'" + timeTrain + "', '" + id_ct + "')";
+            //if (id != null && name != null && timeTrain != null && id_ct != null)
+            //{
+            //string quey = "INSERT INTO NGANH VALUES('" + id + "', N'" + name + "', N'" + timeTrain + "', '" + id_ct + "')";
 
-            int result = DataProvider.Instance.ExcuteNoneQuery(quey);
+            //int result = DataProvider.Instance.ExcuteNoneQuery(quey);
 
-            return result > 0;
+            //return result > 0;
+            //}
+            //return false;
+            if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(timeTrain))
+            {
+                try
+                {
+                    string quey = "INSERT INTO NGANH VALUES('" + id + "', N'" + name + "', N'" + timeTrain + "', '" + id_ct + "')";
+
+                    int result = DataProvider.Instance.ExcuteNoneQuery(quey);
+
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi thêm ngành: {ex.Message}");
+                    return false;
+                }
+            }
+            return false;
         }
 
         public bool DeleteMajor(string id)

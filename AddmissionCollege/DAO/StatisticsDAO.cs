@@ -27,7 +27,7 @@ namespace AddmissionCollege.DAO
 
             try
             {
-                // Lấy dữ liệu từ cơ sở dữ liệu thông qua DataProvider
+
                 DataTable result1 = DataProvider.Instance.ExcuteQuery(sql1);
                 stats.TongCTDT1 = Convert.ToInt32(result1.Rows[0]["TongCTDT"]);
 

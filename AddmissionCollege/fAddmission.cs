@@ -183,7 +183,7 @@ namespace AddmissionCollege
             if (AddmisionDAO.Instance.deleteAdmission(id_n, id_pt))
             {
 
-                MessageBox.Show("Xóa thành công");
+                MessageBox.Show("Xóa xét tuyển thành công");
                 loadListAdmision();
             }
             else
@@ -244,7 +244,7 @@ namespace AddmissionCollege
             {
                 string tukhoa = txtSearchAddmision.Text;
 
-                string query = " SELECT XT.ID_N, N.TEN_NGANH, N.ID, PT.TEN_PT AS PhuongThuc, XT.ID_NAM AS NAM, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN FROM XET_TUYEN AS XT JOIN NGANH AS N ON XT.ID_N = N.ID JOIN PHUONG_THUC_XT AS PT ON XT.ID_PT = PT.ID WHERE N.TEN_NGANH LIKE '%" + tukhoa + "%' OR N.ID LIKE '%" + tukhoa + "%' OR PT.TEN_PT LIKE '%" + tukhoa + "%';";
+                string query = "SELECT XT.ID_N, N.TEN_NGANH, NX.NAM, PT.TEN_PT AS PhuongThuc, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN, CT.TEN_CT AS ChuongTrinh FROM XET_TUYEN XT JOIN NGANH N ON XT.ID_N = N.ID JOIN NAM_XT NX ON XT.ID_NAM = NX.ID JOIN PHUONG_THUC_XT PT ON XT.ID_PT = PT.ID JOIN CHUONG_TRINH CT ON N.ID_CT = CT.ID WHERE XT.ID_N LIKE '%" + tukhoa + "%' OR N.ID LIKE '%" + tukhoa + "%' OR PT.TEN_PT LIKE '%" + tukhoa + "%';";
 
                 DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
@@ -273,9 +273,36 @@ namespace AddmissionCollege
 
         private void comboBoxLoadYearAdm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id_nam = comboBoxLoadYearAdm.SelectedValue?.ToString();
+            string selectedYear = comboBoxLoadYearAdm.SelectedValue?.ToString();
 
+            dataGridViewLoadAddmission.Rows.Clear();
+            if (dataGridViewLoadAddmission.Columns.Count == 0)
+            {
+                dataGridViewLoadAddmission.Columns.Add("ID_N", "MÃ NGÀNH");
+                dataGridViewLoadAddmission.Columns.Add("TEN_NGANH", "NGÀNH");
+                dataGridViewLoadAddmission.Columns.Add("PhuongThuc", "PHƯƠNG THỨC");
+                dataGridViewLoadAddmission.Columns.Add("CHI_TIEU", "CHỈ TIÊU");
+                dataGridViewLoadAddmission.Columns.Add("DIEM_TRUNG_TUYEN", "ĐIỂM");
+                dataGridViewLoadAddmission.Columns.Add("NAM", "NĂM");
 
+                dataGridViewLoadAddmission.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
+                dataGridViewLoadAddmission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                dataGridViewLoadAddmission.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
+            }
+
+            List<Addmision> list = AddmisionDAO.Instance.listFollowYear(selectedYear);
+            HashSet<string> uniqueEntries = new HashSet<string>();
+
+            foreach (Addmision addmision in list)
+            {
+                string entry = $"{addmision.Id_n}|{addmision.Ten_Nganh}|{addmision.PhuongThuc1}|{addmision.Nam}|{addmision.ChiTieu}|{addmision.Diem}";
+
+                if (uniqueEntries.Add(entry))
+                {
+                    dataGridViewLoadAddmission.Rows.Add(addmision.Id_n, addmision.Ten_Nganh, addmision.PhuongThuc1, addmision.ChiTieu, addmision.Diem, addmision.Nam);
+                }
+            }
 
         }
 

@@ -208,5 +208,14 @@ namespace AddmissionCollege
         {
 
         }
+
+        private void btnPrintMPlusC_Click(object sender, EventArgs e)
+        {
+            fPrintTHN fPrintRoom = new fPrintTHN();
+            Point pictureBoxLocation = panel1.PointToScreen(Point.Empty);
+            fPrintRoom.StartPosition = FormStartPosition.Manual;
+            fPrintRoom.Location = pictureBoxLocation;
+            fPrintRoom.Show();
+        }
     }
 }

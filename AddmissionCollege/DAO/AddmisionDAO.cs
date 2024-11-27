@@ -34,6 +34,21 @@ namespace AddmissionCollege.DAO
 
             return list;
         }
+
+        public List<Addmision> listFollowYear(string year)
+        {
+            List<Addmision> list = new List<Addmision>();
+
+            //DataTable data = DataProvider.Instance.ExcuteQuery("SELECT XT.ID_N, N.TEN_NGANH, NX.NAM, PT.TEN_PT AS PhuongThuc, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN, CT.TEN_CT AS ChuongTrinh FROM XET_TUYEN XT JOIN NGANH N ON XT.ID_N = N.ID JOIN NAM_XT NX ON XT.ID_NAM = NX.ID JOIN PHUONG_THUC_XT PT ON XT.ID_PT = PT.ID JOIN CHUONG_TRINH CT ON N.ID_CT = CT.ID");
+            DataTable data = DataProvider.Instance.ExcuteQuery("SELECT XT.ID_N, N.TEN_NGANH, NX.NAM, PT.TEN_PT AS PhuongThuc, XT.CHI_TIEU, XT.DIEM_TRUNG_TUYEN, CT.TEN_CT AS ChuongTrinh FROM XET_TUYEN XT JOIN NGANH N ON XT.ID_N = N.ID JOIN NAM_XT NX ON XT.ID_NAM = NX.ID JOIN PHUONG_THUC_XT PT ON XT.ID_PT = PT.ID JOIN CHUONG_TRINH CT ON N.ID_CT = CT.ID WHERE NX.ID = '"+year+"'");
+            foreach (DataRow row in data.Rows)
+            {
+                Addmision major = new Addmision(row);
+                list.Add(major);
+            }
+
+            return list;
+        }
         public List<Curriculum> loadComboBoxCurriculum()
         {
 
@@ -69,7 +84,7 @@ namespace AddmissionCollege.DAO
         }
         public bool updateAdmission(string id_n, string id_pt, string id_nam, int chi_tieu, float diem)
         {
-            string sql = "UPDATE XET_TUYEN SET ID_NAM = '"+id_nam+"', CHI_TIEU = '"+chi_tieu+"', DIEM_TRUNG_TUYEN = '"+diem+ "' WHERE ID_N = '" + id_n + "' AND ID_PT = '"+id_pt+"'";
+            string sql = "UPDATE XET_TUYEN SET ID_NAM = '"+id_nam+"', CHI_TIEU = '"+chi_tieu+"', DIEM_TRUNG_TUYEN = '"+diem+ "' WHERE ID_N = '" + id_n + "' AND ID_PT = '"+id_pt+ "' AND ID_NAM = '"+id_nam+"'";
 
             int result = DataProvider.Instance.ExcuteNoneQuery(sql);
 

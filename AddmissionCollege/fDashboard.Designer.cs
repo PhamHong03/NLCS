@@ -97,11 +97,12 @@
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.DarkBlue;
-            label3.Location = new Point(174, 60);
+            label3.Location = new Point(142, 62);
             label3.Name = "label3";
             label3.Size = new Size(42, 22);
             label3.TabIndex = 3;
             label3.Text = "role";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -279,7 +280,7 @@
             btnTH_N.Name = "btnTH_N";
             btnTH_N.Size = new Size(307, 59);
             btnTH_N.TabIndex = 1;
-            btnTH_N.Text = "Quản lý danh sách  THD";
+            btnTH_N.Text = "Quản lý danh sách  THN";
             btnTH_N.TextAlign = ContentAlignment.MiddleRight;
             btnTH_N.UseVisualStyleBackColor = false;
             btnTH_N.Click += btnTH_N_Click;
@@ -346,7 +347,7 @@
             panelPictureBox.BackColor = Color.White;
             panelPictureBox.Location = new Point(330, 102);
             panelPictureBox.Name = "panelPictureBox";
-            panelPictureBox.Size = new Size(1307, 841);
+            panelPictureBox.Size = new Size(1294, 841);
             panelPictureBox.TabIndex = 5;
             // 
             // fDashboard

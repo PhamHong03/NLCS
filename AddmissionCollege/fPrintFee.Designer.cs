@@ -1,6 +1,6 @@
 ﻿namespace AddmissionCollege
 {
-    partial class fPrintMajor
+    partial class fPrintFee
     {
         /// <summary>
         /// Required designer variable.
@@ -38,35 +38,35 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.DarkBlue;
-            label1.Location = new Point(454, 38);
+            label1.Location = new Point(405, 35);
             label1.Name = "label1";
-            label1.Size = new Size(399, 35);
-            label1.TabIndex = 1;
-            label1.Text = "DANH SÁCH NGÀNH HỌC ";
+            label1.Size = new Size(520, 35);
+            label1.TabIndex = 3;
+            label1.Text = "DANH SÁCH THÔNG TIN HỌC PHÍ ";
             // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.AliceBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 103);
+            dataGridView1.Location = new Point(12, 89);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1286, 726);
-            dataGridView1.TabIndex = 2;
+            dataGridView1.Size = new Size(1280, 732);
+            dataGridView1.TabIndex = 4;
             // 
-            // fPrintMajor
+            // fPrintFee
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1294, 841);
+            ClientSize = new Size(1294, 834);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "fPrintMajor";
-            Text = "fPrintMajor";
-            Load += fPrintMajor_Load;
+            Name = "fPrintFee";
+            Text = "fPrintFee";
+            Load += fPrintFee_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -112,14 +112,17 @@ namespace AddmissionCollege
             string name = txtNameMajor.Text;
             string timeTrain = txtTrainTimeMajor.Text;
             int chuong_trinh = int.Parse(comboBoxCurriculum.SelectedValue.ToString());
-            if (MajorDAO.Instance.InsertMajor(id, name, timeTrain, chuong_trinh))
+            if (id != null && name != null && timeTrain != null && chuong_trinh != null)
             {
-                MessageBox.Show("Thêm ngành thành công!");
-                LoadMajorList();
-            }
-            else
-            {
-                MessageBox.Show("Thêm lỗi, vui lòng kiểm tra lại!");
+                if (MajorDAO.Instance.InsertMajor(id, name, timeTrain, chuong_trinh))
+                {
+                    MessageBox.Show("Thêm ngành thành công!");
+                    LoadMajorList();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm lỗi, vui lòng kiểm tra lại!");
+                }
             }
         }
 

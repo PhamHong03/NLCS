@@ -43,6 +43,7 @@
             comboBoxLoadMajorList = new ComboBox();
             txtSearchMajorCom = new TextBox();
             btnSearchMajorCom = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoadListMajorCom).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -112,6 +113,7 @@
             btnPrintMPlusC.TabIndex = 9;
             btnPrintMPlusC.Text = "In file ";
             btnPrintMPlusC.UseVisualStyleBackColor = false;
+            btnPrintMPlusC.Click += btnPrintMPlusC_Click;
             // 
             // btnExportMPlusC
             // 
@@ -219,6 +221,13 @@
             btnSearchMajorCom.UseVisualStyleBackColor = false;
             btnSearchMajorCom.Click += btnSearchMajorCom_Click;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(8, 7);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1297, 829);
+            panel1.TabIndex = 18;
+            // 
             // fMajorPlusCombinate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -231,6 +240,7 @@
             Controls.Add(dataGridViewLoadListMajorCom);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fMajorPlusCombinate";
             Text = "fMajorPlusCombinate";
@@ -258,5 +268,6 @@
         private Button btnPrintMPlusC;
         private Button btnExportMPlusC;
         private Button btnDeleteMPlusC;
+        private Panel panel1;
     }
 }

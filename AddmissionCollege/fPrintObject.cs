@@ -12,31 +12,27 @@ using System.Windows.Forms;
 
 namespace AddmissionCollege
 {
-    public partial class fPrintMethod : Form
+    public partial class fPrintObject : Form
     {
-        public fPrintMethod()
+        public fPrintObject()
         {
             InitializeComponent();
-            LoadListMethod();
+            LoadObjectPriority();   
         }
 
-        private void fPrintMethod_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        void LoadListMethod()
+        void LoadObjectPriority()
         {
             dataGridView1.Rows.Clear();
             if (dataGridView1.Columns.Count == 0)
             {
-                //dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("TEN_PT", "TÊN PHƯƠNG THỨC");
-                dataGridView1.Columns.Add("MO_TA", "MÔ TẢ");
+                dataGridView1.Columns.Add("ID", "ID");
+                dataGridView1.Columns.Add("Ten_DT", "TÊN ĐỐI TƯỢNG");
+                dataGridView1.Columns.Add("CHINH_SACH", "CHÍNH SÁCH");
 
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Tomato;
                 dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -44,19 +40,20 @@ namespace AddmissionCollege
                 dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 13, FontStyle.Bold);
             }
 
-            List<MethodXT> list = MethodDAO.Instance.LoadMethodList();
-            HashSet<string> uniqueEntries = new HashSet<string>();
+            List<ObjectPriority> list = ObjectPriorityDAO.Instance.loadObjectPriority();
+            HashSet<string> uniqueEntries = new HashSet<string>(); // Giúp theo dõi các bản ghi đã thêm
 
-            foreach (MethodXT method in list)
+            foreach (ObjectPriority objectPriority in list)
             {
-                string entry = $"{method.TEN_PT1}";
+                string entry = $"{objectPriority.Ten_DT1}|{objectPriority.CHINH_SACH1}";
 
                 if (uniqueEntries.Add(entry))
                 {
-                    dataGridView1.Rows.Add(method.TEN_PT1, method.MO_TA1);
+                    dataGridView1.Rows.Add(objectPriority.Id, objectPriority.Ten_DT1, objectPriority.CHINH_SACH1);
                 }
             }
-            //dataGridView1.Columns["ID"].Visible = true;
+
+            dataGridView1.Columns["ID"].Visible = false;
         }
     }
 }
